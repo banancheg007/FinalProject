@@ -1,1 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test suite American taxi" verbose="1">
+    <listeners>
+        <listener class-name="ui.listeners.Listener"/>
+    </listeners>
+    <test name="Ui tests">
+        <classes>
+            <class name="uiTest.UiTest"/>
+        </classes>
+    </test>
+</suite>
