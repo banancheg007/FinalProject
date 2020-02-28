@@ -5,7 +5,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.TmsLink;
-import org.testng.Assert;
+import org.junit.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -29,6 +29,7 @@ public class UiTest {
     @Test(description = "Open main page")
     public void OpenMainPage() {
         mainPage.openStartUrl();
+        Assert.assertEquals(mainPage.getCurrentUrl(), "www.gfgfdg");
     }
 
 

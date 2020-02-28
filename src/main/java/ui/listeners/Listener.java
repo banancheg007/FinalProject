@@ -15,16 +15,9 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Properties;
 
-public class Listener implements ITestListener, ISuiteListener{
+public class Listener implements ITestListener{
 
-    @Override
-    public void onStart(ISuite arg0) {
-    }
 
-    @Override
-    public void onFinish(ISuite arg0) {
-        InitialDriver.getInstance().destroy();
-    }
 
     @Override
     public void onStart(ITestContext arg0) {
@@ -44,7 +37,7 @@ public class Listener implements ITestListener, ISuiteListener{
     @Override
     public void onTestFailure(ITestResult arg0) {
         attachScreenshot();
-        new Screen().getScreen();
+        //new Screen().getScreen();
         InitialDriver.getInstance().destroy();
     }
 
