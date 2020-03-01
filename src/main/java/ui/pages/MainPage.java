@@ -7,4 +7,6 @@ public class MainPage extends BasePage{
     public void openStartUrl(){
         openUrl(Utils.URL);
     }
+
+
 }
