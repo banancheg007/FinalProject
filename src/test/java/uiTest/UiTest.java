@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import ui.initialDriver.AppManager;
 import ui.listeners.Listener;
 import ui.pages.MainPage;
 
@@ -18,18 +19,20 @@ import ui.pages.MainPage;
 @Listeners({Listener.class})
 public class UiTest {
 
-    private MainPage mainPage;
+    private AppManager appManager;
 
 
     @BeforeMethod
     public void setUp() {
-        mainPage = new MainPage();
+        appManager = new AppManager();
     }
 
     @Test(description = "Open main page")
     public void OpenMainPage() {
-        mainPage.openStartUrl();
-        Assert.assertEquals(mainPage.getCurrentUrl(), "www.gfgfdg");
+        appManager.getMainPageHelper().openStartUrl();
+        appManager.onPage(MainPage.class).getAboutCompanyDropDownList().click();
+       // Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(), "www.gfgfdg");
+
     }
 
 

@@ -100,6 +100,26 @@
             <version>2.0-BETA3</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.atlasmap</groupId>
+            <artifactId>atlas-core</artifactId>
+            <version>1.43.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.atlas/atlas-webdriver -->
+        <dependency>
+            <groupId>io.qameta.atlas</groupId>
+            <artifactId>atlas-webdriver</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+
+
+
         <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>

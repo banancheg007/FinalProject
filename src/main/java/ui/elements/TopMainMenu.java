@@ -1,47 +1,83 @@
 package ui.elements;
 
+import io.qameta.atlas.webdriver.extension.FindBy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import io.qameta.atlas.core.Atlas;
 
 public interface TopMainMenu {
+
+    //Бренд лого
+    @FindBy("a.navbar-brand")
+    WebElement getMainPageLogoButton();
+
+
     //випадаючий список "Для дому" з дочірніми елементами
-    By ForHomeDropDownList = By.xpath("//a[contains(text(),'Для Дому') and @type='button']");
-    By PrivateHouseMenu = By.xpath("//a[contains(text(),'Багатоквартирні будівлі')]");
-    By ApartmentBuildingsMenu = By.xpath("//a[contains(text(),'Приватний будинок')]");
-    By TvMenu = By.xpath("//a[contains(text(),'Телебачення')]");
-    By TvPlusInternetMenu = By.xpath("//a[contains(text(),'ТВ + Інтернет')]");
-    By ServicesForHomeMenu = By.xpath("//a[contains(text(),'Приватний будинок')]/following-sibling::a[contains(text(),'Послуги')]");
+    @FindBy("//a[contains(text(),'Для Дому') and @type='button']")
+    WebElement getForHomeDropDownList();
+    @FindBy("//a[contains(text(),'Приватний будинок')]")
+    WebElement getPrivateHouseMenuItem();
+    @FindBy("//a[contains(text(),'Багатоквартирні будівлі')]")
+    WebElement getApartmentBuildingsMenuItem();
+    @FindBy("//a[contains(text(),'Телебачення')]")
+    WebElement getTvMenuItem();
+    @FindBy("//a[contains(text(),'ТВ + Інтернет')]")
+    WebElement getTvPlusInternetMenuItem();
+    @FindBy("//a[contains(text(),'Приватний будинок')]/following-sibling::a[contains(text(),'Послуги')]")
+    WebElement getServicesForHomeMenuItem();
+
 
     //випадаючий список "Для бізнесу" з дочірніми елементами
-    By ForBusinessDropDownList = By.xpath("//a[contains(text(),'Для Бізнесу') and @type='button']");
-    By InternetForBusinessMenu = By.xpath("//a[contains(text(),'Інтернет для бізнесу')]");
-    By ServicesForBusinessMenu = By.xpath("//a[contains(text(),'Інтернет для бізнесу')]/following-sibling::a[contains(text(),'Послуги')]");;
-    By AdditionsServicesForBusinessMenu = By.xpath("//a[contains(text(),'Додаткові Послуги')]");
+    @FindBy("//a[contains(text(),'Для Бізнесу') and @type='button']")
+    WebElement getForBusinessDropDownList();
+    @FindBy("//a[contains(text(),'Інтернет для бізнесу')]")
+    WebElement getInternetForBusinessMenuItem();
+    @FindBy("//a[contains(text(),'Інтернет для бізнесу')]/following-sibling::a[contains(text(),'Послуги')]")
+    WebElement getServicesForBusinessMenuItem();
+    @FindBy("//a[contains(text(),'Додаткові Послуги')]")
+    WebElement getAdditionsServicesForBusinessMenuItem();
 
     //випадаючий список"Інші послуги" з дочірніми елементами
-    By AnotherServicesDropDownList = By.xpath("//a[contains(text(),'Інші Послуги') and @type='button']");
-    By HostingMenu = By.xpath("//a[contains(text(),'Хостинг')]");
-    By DomainMenu = By.xpath("//a[contains(text(),'Домен')]");
-    By AdditionsServicesInAllServicesMenu = By.xpath("//a[contains(text(),'Додаткові послуги')]");
+    @FindBy("//a[contains(text(),'Інші Послуги') and @type='button']")
+    WebElement getAnotherServicesDropDownList();
+    @FindBy("//a[contains(text(),'Хостинг')]")
+    WebElement getHostingMenuItem();
+    @FindBy("//a[contains(text(),'Домен')]")
+    WebElement getDomainMenuItem();
+    @FindBy("//a[contains(text(),'Додаткові послуги')]")
+    WebElement getAdditionsServicesInAllServicesMenuItem();
 
     //меню "Акції"
-    By PromotionsMenu = By.xpath("//div/a[contains(text(),'Акції')]");
+    @FindBy("//div/a[contains(text(),'Акції')]")
+    WebElement getPromotionsMenuItem();
 
     //випадаючий список "Продукція" з дочірніми елементами
-    By ProductionDropDownList = By.xpath("//a[contains(text(),'Продукція') and @type='button']");
-    By RoutersMenu = By.xpath("//a[contains(text(),'Роутери')]");
-    By IntercomsMenu = By.xpath("//a[contains(text(),'Домофони')]");
+    @FindBy("//a[contains(text(),'Продукція') and @type='button']")
+    WebElement getProductionDropDownList();
+    @FindBy("//a[contains(text(),'Роутери')]")
+    WebElement getRoutersMenuItem();
+    @FindBy("//a[contains(text(),'Домофони')]")
+    WebElement getIntercomsMenuItem();
 
     //випадаючий список "Питання" з дочірніми елементами
-    By QuestionsDropDownList = By.xpath("//a[contains(text(),'Питання')]");
-    By CommonQuestionsMenu = By.xpath("//a[contains(text(),'Поширені питання')]");
-    By FeedbackMenu = By.xpath("//div/a[contains(text(),'Зворотній зв')]");
+    @FindBy("//a[contains(text(),'Питання')]")
+    WebElement getQuestionsDropDownList();
+    @FindBy("//a[contains(text(),'Поширені питання')]")
+    WebElement getCommonQuestionsMenu();
+    @FindBy("//div/a[contains(text(),'Зворотній зв')]")
+    WebElement getFeedbackMenu();
 
     //випадаючий список "Про компанію" з дочірніми елементами
-    By AboutCompanyDropDownList = By.xpath("//a[contains(text(),'Про Компанію') and @type='button']");
-    By AboutCompanyMenu = By.xpath("//a[contains(text(),'Про компанію')]");
-    By ContactsMenu = By.xpath("//a[contains(text(),'Контакти')]");
-    By CityCameras = By.xpath("//a[contains(text(),'Камери міста')]");
-    By WifiHotSpot = By.xpath("//a[contains(text(),'WiFi HotSpot')]");
+    @FindBy("//a[contains(text(),'Про Компанію') and @type='button']")
+    WebElement getAboutCompanyDropDownList();
+    @FindBy("//a[contains(text(),'Про компанію')]")
+    WebElement getAboutCompanyMenuItem();
+    @FindBy("//a[contains(text(),'Контакти')]")
+    WebElement getContactsMenuItem();
+    @FindBy("//a[contains(text(),'Камери міста')]")
+    WebElement getCityCamerasMenuItem();
+    @FindBy("//a[contains(text(),'WiFi HotSpot')]")
+    WebElement getWifiHotSpotMenuItem();
 
 
 }

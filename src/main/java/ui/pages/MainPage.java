@@ -1,12 +1,9 @@
 package ui.pages;
 
+import ui.elements.TopMainMenu;
 import ui.utils.Utils;
 
-public class MainPage extends BasePage{
-
-    public void openStartUrl(){
-        openUrl(Utils.URL);
-    }
+public interface MainPage extends BasePage, TopMainMenu {
 
 
 }
