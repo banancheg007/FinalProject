@@ -4,11 +4,10 @@ import ui.initialDriver.AppManager;
 import ui.pages.MainPage;
 import ui.utils.Utils;
 
-public class MainPageHelper {
-    AppManager appManager;
+public class MainPageHelper extends BaseHelper {
 
     public MainPageHelper(AppManager appManager){
-        this.appManager = appManager;
+        super(appManager);
     }
 
     void openUrl(String url){
