@@ -66,14 +66,12 @@ public abstract class EventHandler extends JSWaiter implements WebDriverEventLis
 
     @Override
     public void beforeClickOn(WebElement arg0, WebDriver arg1) {
-        System.out.println("Before Click");
         waitJQueryAngular();
         waitForJQueryLoad();
     }
 
     @Override
     public void afterClickOn(WebElement arg0, WebDriver arg1) {
-        System.out.println("After Click");
         waitJQueryAngular();
         waitForJQueryLoad();
 

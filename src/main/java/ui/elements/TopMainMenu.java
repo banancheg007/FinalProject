@@ -1,6 +1,7 @@
 package ui.elements;
 
 import io.qameta.atlas.webdriver.extension.FindBy;
+import io.qameta.atlas.webdriver.extension.Param;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import io.qameta.atlas.core.Atlas;
@@ -17,8 +18,8 @@ public interface TopMainMenu {
     WebElement getForHomeDropDownList();
     @FindBy("//a[contains(text(),'Приватний будинок')]")
     WebElement getPrivateHouseMenuItem();
-    @FindBy("//a[contains(text(),'Багатоквартирні будівлі')]")
-    WebElement getApartmentBuildingsMenuItem();
+    @FindBy("//a[contains(text(),'{{value}}')]")
+    WebElement getApartmentBuildingsMenuItem(@Param("value") String value);
     @FindBy("//a[contains(text(),'Телебачення')]")
     WebElement getTvMenuItem();
     @FindBy("//a[contains(text(),'ТВ + Інтернет')]")
@@ -78,6 +79,15 @@ public interface TopMainMenu {
     WebElement getCityCamerasMenuItem();
     @FindBy("//a[contains(text(),'WiFi HotSpot')]")
     WebElement getWifiHotSpotMenuItem();
+
+    default void getApartmentBuildingsMenuItemClick(String value){
+        getApartmentBuildingsMenuItem(value).click();
+    }
+
+    default String getApartmentBuildingsMenuItemColor(String value){
+        return getApartmentBuildingsMenuItem(value).getText();
+    }
+
 
 
 }

@@ -29,8 +29,8 @@ public class UiTest {
 
     @Test(description = "Open main page")
     public void OpenMainPage() {
-        appManager.getMainPageHelper().openStartUrl();
-        appManager.onPage(MainPage.class).getAboutCompanyDropDownList().click();
+        //appManager.getMainPageHelper().openStartUrl();
+        //appManager.onPage(MainPage.class).getAboutCompanyDropDownList().click();
        // Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(), "www.gfgfdg");
 
     }
