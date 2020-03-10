@@ -1,12 +1,13 @@
 package ui.elements;
 
+import io.qameta.atlas.webdriver.AtlasWebElement;
 import io.qameta.atlas.webdriver.extension.FindBy;
 import io.qameta.atlas.webdriver.extension.Param;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import io.qameta.atlas.core.Atlas;
 
-public interface TopMainMenu {
+public interface TopMainMenu<T extends  WebElement> extends AtlasWebElement {
 
     //Бренд лого
     @FindBy("a.navbar-brand")
@@ -87,7 +88,6 @@ public interface TopMainMenu {
     default String getApartmentBuildingsMenuItemColor(String value){
         return getApartmentBuildingsMenuItem(value).getText();
     }
-
 
 
 }
