@@ -29,9 +29,13 @@ public class UiTest {
 
     @Test(description = "Open main page")
     public void OpenMainPage() {
-        //appManager.getMainPageHelper().openStartUrl();
-        //appManager.onPage(MainPage.class).getAboutCompanyDropDownList().click();
-       // Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(), "www.gfgfdg");
+        appManager.getMainPageHelper().openStartUrl();
+        appManager.onPage(MainPage.class).navigationBar().dropdown("Для Дому").click();//dropdownItem("Телебачення").click();
+        appManager.onPage(MainPage.class).navigationBar().dropdown("Для Дому").dropdownItem("Телебачення").click();
+
+        appManager.onPage(MainPage.class).navigationBar().dropdown("Продукція").click();//dropdownItem("Телебачення").click();
+        appManager.onPage(MainPage.class).navigationBar().dropdown("Продукція").dropdownItem("Домофони").click();
+       //Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(), "www.gfgfdg");
 
     }
 

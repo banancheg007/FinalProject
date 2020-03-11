@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import io.qameta.atlas.core.Atlas;
 
-public interface TopMainMenu<T extends  WebElement> extends AtlasWebElement {
+public interface TopMainMenu extends AtlasWebElement {
 
     //Бренд лого
     @FindBy("a.navbar-brand")
