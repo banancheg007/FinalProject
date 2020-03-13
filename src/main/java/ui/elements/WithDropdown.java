@@ -7,4 +7,7 @@ import io.qameta.atlas.webdriver.extension.Param;
 public interface WithDropdown {
     @FindBy(".//a[contains(text(), '{{ value }}')]")
     Dropdown dropdown(@Param("value") String value);
+
+
+
 }

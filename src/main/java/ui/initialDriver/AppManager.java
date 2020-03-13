@@ -12,6 +12,9 @@ public class AppManager {
     Atlas atlas = new Atlas(new WebDriverConfiguration((driver)));
     private MainPageHelper mainPageHelper = new MainPageHelper(this);
 
+    public AppManager(){
+        System.out.println("AppManager create");
+    }
     public WebDriver getDriver(){
         return  driver;
     }
