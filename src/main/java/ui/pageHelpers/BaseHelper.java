@@ -2,6 +2,7 @@ package ui.pageHelpers;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.SwitchToFrame;
 import ui.initialDriver.AppManager;
 
 public class BaseHelper {
@@ -14,6 +15,10 @@ public class BaseHelper {
     }
 
     public void scrollToElementWithJSExec(WebElement element){
-        ((JavascriptExecutor)appManager.getDriver()).executeScript("arguments[0].scrollIntoView();", element);
+        ((JavascriptExecutor)appManager.getDriver()).executeScript("arguments[0].scrollIntoView(false);", element);
+    }
+
+    public void SwitchToFrame(WebElement element){
+        appManager.getDriver().switchTo().frame(element);
     }
 }

@@ -2,14 +2,20 @@ package ui.pages;
 
 import io.qameta.atlas.webdriver.AtlasWebElement;
 import io.qameta.atlas.webdriver.extension.FindBy;
-import ui.elements.NavigationBar;
-import ui.elements.TopMainMenu;
+import io.qameta.atlas.webdriver.extension.Param;
+import ui.elements.WithContainer;
+import ui.elements.WithHeader;
+import ui.elements.WithInput;
 import ui.elements.WithNavigationBar;
-import ui.utils.Utils;
 
-public interface MainPage extends BasePage, WithNavigationBar {
+public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithInput, WithContainer {
 
-    @FindBy("//div[contains(@class, 'recaptcha-checkbox-')]")
-    AtlasWebElement captchaCheckbox();
+    @FindBy("//div[contains(@class,'{{ value }}')]")
+    AtlasWebElement captchaCheckbox(@Param("value") String value);
+
+    @FindBy("//iframe[@height]")
+    AtlasWebElement frame();
+
+
 
 }

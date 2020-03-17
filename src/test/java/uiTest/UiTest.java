@@ -28,12 +28,16 @@ public class UiTest {
     }
 
     @Test(description = "Open main page")
-    public void OpenMainPage() {
+    public void OpenMainPage() throws InterruptedException {
         appManager.getMainPageHelper().openStartUrl();
         //appManager.onPage(MainPage.class).navigationBar().dropdown("Для Дому").click();//dropdownItem("Телебачення").click();
-        //appManager.onPage(MainPage.class).navigationBar().dropdown("Для Дому").dropdownItem("Телебачення").click();
-        appManager.getMainPageHelper().scrollToElementWithJSExec(appManager.onPage(MainPage.class).captchaCheckbox());
-        appManager.onPage(MainPage.class).captchaCheckbox().click();
+       // appManager.onPage(MainPage.class).navigationBar().dropdown("Для Дому").dropdownItem("Телебачення").click();
+       // appManager.getMainPageHelper().scrollToElementWithJSExec(appManager.onPage(MainPage.class).container("col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12").input("Заповніть це поле"));
+        appManager.getMainPageHelper().scrollToElementWithJSExec(appManager.onPage(MainPage.class).container("col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12").button("Відправити"));
+        //Thread.sleep(5000);
+        appManager.getMainPageHelper().SwitchToFrame(appManager.onPage(MainPage.class).frame());
+        appManager.onPage(MainPage.class).captchaCheckbox("recaptcha-checkbox-").click();
+        Thread.sleep(5000);
        //Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(), "www.gfgfdg");
 
     }
