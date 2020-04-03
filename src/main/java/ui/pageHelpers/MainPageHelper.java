@@ -1,6 +1,8 @@
 package ui.pageHelpers;
 
+import io.qameta.atlas.webdriver.WebPage;
 import ui.initialDriver.AppManager;
+import ui.pages.BasePage;
 import ui.pages.MainPage;
 import ui.utils.Utils;
 
@@ -10,17 +12,18 @@ public class MainPageHelper extends BaseHelper {
         super(appManager);
     }
 
-    void openUrl(String url){
-        appManager.getDriver().get(url);
+    public  MainPage onMainPage(){
+         return onPage(MainPage.class );
     }
 
-    public String getCurrentUrl(){
-        return appManager.getDriver().getCurrentUrl();
+
+    public BaseHelper scrollToButton(){
+        openStartUrl();
+        scrollToElementWithJSExec(onMainPage().container("col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12").button("Відправити"));
+        return this;
     }
 
-     public void openStartUrl(){
-        openUrl(Utils.URL);
-    }
+
 
 
 

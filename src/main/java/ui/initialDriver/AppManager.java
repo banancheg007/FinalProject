@@ -8,8 +8,9 @@ import ui.pages.BasePage;
 import ui.pages.MainPage;
 
 public class AppManager {
+
     private WebDriver driver = InitialDriver.getInstance().getDriver();
-    Atlas atlas = new Atlas(new WebDriverConfiguration((driver)));
+
     private MainPageHelper mainPageHelper = new MainPageHelper(this);
 
     public AppManager(){
@@ -23,7 +24,5 @@ public class AppManager {
         return mainPageHelper;
     }
 
-    public <T extends BasePage> T onPage(Class<T> page) {
-        return atlas.create(driver, page);
-    }
+
 }

@@ -67,10 +67,12 @@ public class InitialDriver extends Options {
             }
             case "FIREFOX": {
                 WebDriverManager.firefoxdriver().setup();
+                //System.setProperty("webdriver.gecko.driver","C:\\workspace\\FinalProject\\src\\main\\resources\\geckodriver.exe");
                 driver = new FirefoxDriver(firefoxOptions());
                 break;
             }
             case "IE": {
+                WebDriverManager.iedriver().setup();
                 driver = new InternetExplorerDriver(internetExplorerOptions());
                 break;
             }
