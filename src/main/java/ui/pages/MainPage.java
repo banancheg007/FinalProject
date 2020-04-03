@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.server.handler.ClickElement;
 import ui.elements.*;
 
-public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithInput, WithContainer, WithFooter {
+public interface MainPage extends BasePage {
 
     @FindBy("//div[contains(@class,'{{ value }}')]")
     AtlasWebElement captchaCheckbox(@Param("value") String value);

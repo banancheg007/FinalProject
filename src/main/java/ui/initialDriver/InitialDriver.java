@@ -11,8 +11,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import static ui.initialDriver.Base.DRIVER_NAME;
-import static ui.initialDriver.Base.DRIVER_PATH;
-import static ui.initialDriver.Base.DRIVER_VERSION;
+
 
 public class InitialDriver extends Options {
 
@@ -50,19 +49,8 @@ public class InitialDriver extends Options {
     private synchronized WebDriver initialDriver() {
         switch (DRIVER_NAME) {
             case "CHROME": {
-                if (!DRIVER_VERSION.equals("0")) {
-                    WebDriverManager.chromedriver().version(DRIVER_VERSION).setup();
-                } else {
-                    System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
-
-                }
-                if (System.getProperty("os.name").contains("Windows")) {
-
-                    driver = new ChromeDriver(chromeOptionsLocal());
-
-                } else {
-                    driver = new ChromeDriver(chromeOptionsForJenkins());
-                }
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver(chromeOptionsLocal());
                 break;
             }
             case "FIREFOX": {
@@ -78,7 +66,9 @@ public class InitialDriver extends Options {
             }
 
             default: {
+                WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(chromeOptionsForJenkins());
+                break;
             }
         }
 

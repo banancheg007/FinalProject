@@ -27,7 +27,7 @@ public class UiTest {
     @BeforeMethod
     public void setUp() {
         appManager = new AppManager();
-        System.setProperty("ATLAS_WEBSITE_URL", "https://mclaut.com/");
+        //System.setProperty("ATLAS_WEBSITE_URL", "https://mclaut.com/");
     }
 
     @Test(description = "Open main page")
@@ -44,7 +44,7 @@ public class UiTest {
         //appManager.onPage(MainPage.class).onHomePage().container("div").click();
         Thread.sleep(5000);
        //Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(), "www.gfgfdg");
-       
+
     }
 
 
