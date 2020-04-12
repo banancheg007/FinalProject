@@ -2,7 +2,7 @@ package ui.initialDriver;
 
 
 import ui.events.EventHandler;
-import ui.events.EventLoger;
+import ui.events.EventLogger;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,10 +37,8 @@ public class InitialDriver extends Options {
     public WebDriver getDriver() {
         if (driver == null) {
             driver = initialDriver();
-            return driver;
-        } else {
-            return driver;
         }
+        return driver;
     }
 
     /*
@@ -75,7 +73,7 @@ public class InitialDriver extends Options {
         EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver);
         EventHandler handler = new EventHandler() {
         };
-        EventLoger log = new EventLoger() {
+        EventLogger log = new EventLogger() {
         };
         driver = eventDriver.register(log);
         driver = eventDriver.register(handler);

@@ -5,6 +5,7 @@ import io.qameta.atlas.webdriver.extension.FindBy;
 import io.qameta.atlas.webdriver.extension.Param;
 
 public interface Dropdown extends AtlasWebElement {
+
     @FindBy(".//following-sibling::div/a[contains(., '{{ value }}')]")
     AtlasWebElement dropdownItem(@Param("value") String value);
 }

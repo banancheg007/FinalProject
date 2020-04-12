@@ -9,7 +9,7 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 
 
 
-public class EventLoger implements WebDriverEventListener {
+public class EventLogger implements WebDriverEventListener {
 
     @Override
     public void beforeAlertAccept(WebDriver webDriver) {

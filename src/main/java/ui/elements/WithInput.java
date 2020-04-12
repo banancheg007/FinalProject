@@ -5,7 +5,7 @@ import io.qameta.atlas.webdriver.extension.FindBy;
 import io.qameta.atlas.webdriver.extension.Param;
 
 public interface WithInput{
-    @FindBy(".//input[contains(@title,'{{ value }}')]")
+    @FindBy(".//input[contains(@id,'{{ value }}')]")
     AtlasWebElement input(@Param("value") String value);
 
 
