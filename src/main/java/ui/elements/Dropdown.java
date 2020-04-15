@@ -8,7 +8,4 @@ public interface Dropdown extends AtlasWebElement {
 
     @FindBy(".//following-sibling::*/*[contains(., '{{ value }}')]")
     AtlasWebElement dropdownItem(@Param("value") String value);
-
-    @FindBy(".//span[contains(., '{{ value }}')]/parent::*")
-    AtlasWebElement dropdownCityItem(@Param("value") String value);
 }

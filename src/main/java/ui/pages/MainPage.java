@@ -34,12 +34,12 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
     }
 
     default void changeCity(String city){
-       header().selectCityDropdown().dropdownItem(city).click();
+       header().selectDropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click();
        // header().click();
     }
 
     default void changeCityForCheckBalance(String city){
-        container(Container.CHECK_BALANCE.getContainerClass()).selectCityDropdown().dropdownItem(city).click(); //.click();
+        container(Container.CHECK_BALANCE.getContainerClass()).selectDropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click(); //.click();
     }
 
 

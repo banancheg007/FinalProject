@@ -10,12 +10,7 @@ public interface WithDropdown {
     @FindBy(".//*[contains(text(), '') and contains(@class, 'dropdown')]")
     Dropdown cityDropdown();
 
-    default Dropdown selectCityDropdown(){
-        Dropdown dropdown = cityDropdown();
-        dropdown.click();
-        //dropdown.waitUntil(hasSize(4));
-        return dropdown;
-    }
+
 
     default Dropdown selectDropdown(String text){
         Dropdown dropdown = dropdown(text);
