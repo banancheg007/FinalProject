@@ -5,19 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ui.initialDriver.AppManager;
 import ui.pages.PageManager;
-import ui.utils.Utils;
 
 public class BaseHelper {
 
-    public PageManager pageManager = new PageManager();
+    protected AppManager appManager;
+
+    protected PageManager pageManager;
 
     void openUrl(String url){
         getDriver().get(url);
     }
 
-    public void openStartUrl(){
-        openUrl(Utils.URL);
+    BaseHelper(AppManager appManager, PageManager pageManager){
+        this.appManager = appManager;
+        this.pageManager = pageManager;
     }
+
     public String getCurrentUrl(){
         return getDriver().getCurrentUrl();
     }
@@ -26,9 +29,9 @@ public class BaseHelper {
         ((JavascriptExecutor)getDriver()).executeScript("arguments[0].scrollIntoView(false);", element);
     }
     public WebDriver getDriver() {
-        return AppManager.getDriver();
+        return appManager.getDriver();
     }
-    public void SwitchToFrame(WebElement element){
+    public void switchToFrame(WebElement element){
         getDriver().switchTo().frame(element);
     }
 

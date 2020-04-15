@@ -1,14 +1,14 @@
 package ui.initialDriver;
 
 
-import ui.events.EventHandler;
-import ui.events.EventLogger;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import ui.events.EventHandler;
+import ui.events.EventLogger;
 
 import static ui.initialDriver.Base.DRIVER_NAME;
 
@@ -58,8 +58,8 @@ public class InitialDriver extends Options {
                 break;
             }
             case "IE": {
-                WebDriverManager.iedriver().setup();
-                driver = new InternetExplorerDriver(internetExplorerOptions());
+                WebDriverManager.operadriver().setup();
+                driver = new OperaDriver();
                 break;
             }
 

@@ -2,18 +2,22 @@ package ui.initialDriver;
 
 import org.openqa.selenium.WebDriver;
 import ui.pageHelpers.MainPageHelper;
+import ui.pages.PageManager;
 
 public class AppManager {
 
-    private static WebDriver driver = InitialDriver.getInstance().getDriver();
+    private  WebDriver driver = InitialDriver.getInstance().getDriver();
 
-    private MainPageHelper mainPageHelper = new MainPageHelper();
+    private PageManager pageManager = new PageManager(this);
+
+    private MainPageHelper mainPageHelper = new MainPageHelper(this,pageManager);
+
 
     public AppManager(){
         System.out.println("AppManager create");
     }
 
-    public static WebDriver getDriver(){
+    public WebDriver getDriver(){
         return  driver;
     }
 

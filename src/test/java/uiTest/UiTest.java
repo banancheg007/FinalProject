@@ -6,6 +6,7 @@ import io.qameta.allure.Feature;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import ui.enums.DropdownItem;
 import ui.initialDriver.AppManager;
 import ui.listeners.Listener;
 
@@ -27,19 +28,14 @@ public class UiTest {
 
     @Test(description = "Open main page")
     public void OpenMainPage() throws InterruptedException {
-        appManager.getMainPageHelper().openStartUrl();
-        //appManager.onPage(MainPage.class).navigationBar().dropdown("Для Дому").click();//dropdownItem("Телебачення").click();
-       // appManager.onPage(MainPage.class).navigationBar().dropdown("Для Дому").dropdownItem("Телебачення").click();
-       // appManager.getMainPageHelper().scrollToElementWithJSExec(appManager.onPage(MainPage.class).container("col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12").input("Заповніть це поле"));
-       // appManager.getMainPageHelper().scrollToButton("").wa;
-        //Thread.sleep(5000);
-        //appManager.getMainPageHelper().SwitchToFrame(appManager.onPage(MainPage.class).frame());
-        //appManager.getMainPageHelper().onMainPage().captchaCheckbox("").should();
-
-        appManager.getMainPageHelper().scrollToButton().inputPersonalNumberForCheckBalance();
-        Thread.sleep(5000);
+       appManager.getMainPageHelper().openMainPage().changeCity(DropdownItem.VATUTINE_VILLAGE.getText());
     }
-
+    @Test(description = "Open main page2")
+    public void OpenMainPage2() throws InterruptedException {
+        appManager.getMainPageHelper().openMainPage().scrollToSendButton().changeCityForCheckBalance(DropdownItem.VATUTINE_VILLAGE.getText());
+        Thread.sleep(5000);
+        //appManager.getMainPageHelper().openMainPage().scrollToSendButton();
+    }
 
 
 }

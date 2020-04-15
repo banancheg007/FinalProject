@@ -8,12 +8,19 @@ import ui.initialDriver.AppManager;
 
 public class PageManager {
 
+    AppManager appManager;
+
+    public PageManager(AppManager appManager){
+        this.appManager = appManager;
+        System.out.println("PageManager create");
+    }
+
     protected <T extends WebPage> T onPage(Class<T> page) {
         return new Atlas(new WebDriverConfiguration(getDriver())).create(getDriver(), page);
     }
 
     public WebDriver getDriver() {
-        return AppManager.getDriver();
+        return appManager.getDriver();
     }
 
     public MainPage onMainPage() {
