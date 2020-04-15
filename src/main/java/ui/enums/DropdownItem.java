@@ -1,7 +1,7 @@
 package ui.enums;
 
 public enum DropdownItem {
-    VATUTINE_VILLAGE("Ватутіне");
+    URKIVKA_VILLAGE("Юрківка");
     private String text;
 
     DropdownItem(String text) {

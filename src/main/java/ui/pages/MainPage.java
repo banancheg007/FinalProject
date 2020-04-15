@@ -3,9 +3,10 @@ package ui.pages;
 import io.qameta.atlas.webdriver.AtlasWebElement;
 import io.qameta.atlas.webdriver.extension.FindBy;
 import io.qameta.atlas.webdriver.extension.Param;
+import org.openqa.selenium.WebDriver;
 import ui.elements.*;
-import ui.enums.*;
 import ui.enums.Container;
+import ui.enums.*;
 
 public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithInput, WithContainer, WithFooter {
 
@@ -14,6 +15,8 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
 
     @FindBy("//iframe[@height]")
     AtlasWebElement frame();
+
+
 
 
 
@@ -34,12 +37,14 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
     }
 
     default void changeCity(String city){
-       header().selectDropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click();
+       header().dropdown(DropDownHeader.CITY.getText()).click();
+       header().dropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click();
        // header().click();
     }
 
-    default void changeCityForCheckBalance(String city){
-        container(Container.CHECK_BALANCE.getContainerClass()).selectDropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click(); //.click();
+    default void changeCityForCheckBalance(String city, WebDriver webDriver){
+        container(Container.CHECK_BALANCE.getContainerClass()).dropdown(DropDownHeader.CITY.getText()).click();
+        container(Container.CHECK_BALANCE.getContainerClass()).dropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click(); //.click();
     }
 
 

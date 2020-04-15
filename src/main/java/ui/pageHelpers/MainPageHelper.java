@@ -1,6 +1,8 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
+import ui.enums.Container;
+import ui.enums.DropDownHeader;
 import ui.initialDriver.AppManager;
 import ui.pages.PageManager;
 import ui.utils.Utils;
@@ -57,14 +59,19 @@ public class MainPageHelper extends BaseHelper {
         return this;
     }
 
-
+    @Step("Change city in header")
     public MainPageHelper changeCity(String city){
-        pageManager.onMainPage().changeCity(city);
+        pageManager.onMainPage().header().dropdown(DropDownHeader.CITY.getText()).click();
+        scrollToElementWithJSExec(pageManager.onMainPage().header().dropdown(DropDownHeader.CITY.getText()).dropdownItem(city));
+        pageManager.onMainPage().header().dropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click();
         return this;
     }
 
+    @Step("Change city for check balance")
     public MainPageHelper changeCityForCheckBalance(String city){
-        pageManager.onMainPage().changeCityForCheckBalance(city);
+        pageManager.onMainPage().container(Container.CHECK_BALANCE.getContainerClass()).dropdown(DropDownHeader.CITY.getText()).click();
+        scrollToElementWithJSExec(pageManager.onMainPage().container(Container.CHECK_BALANCE.getContainerClass()).dropdown(DropDownHeader.CITY.getText()).dropdownItem(city));
+        pageManager.onMainPage().container(Container.CHECK_BALANCE.getContainerClass()).dropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click();
         return this;
     }
 
