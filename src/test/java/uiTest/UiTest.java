@@ -29,13 +29,10 @@ public class UiTest {
     @Test(description = "Open main page")
     public void OpenMainPage() throws InterruptedException {
        appManager.getMainPageHelper().openMainPage().changeCity(DropdownItem.URKIVKA_VILLAGE.getText());
-        Thread.sleep(5000);
     }
     @Test(description = "Open main page2")
     public void OpenMainPage2() throws InterruptedException {
         appManager.getMainPageHelper().openMainPage().scrollToSendButton().changeCityForCheckBalance(DropdownItem.URKIVKA_VILLAGE.getText());
-        Thread.sleep(5000);
-        //appManager.getMainPageHelper().openMainPage().scrollToSendButton();
     }
 
 

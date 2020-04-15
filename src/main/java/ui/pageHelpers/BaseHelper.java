@@ -1,6 +1,5 @@
 package ui.pageHelpers;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ui.initialDriver.AppManager;
@@ -25,9 +24,7 @@ public class BaseHelper {
         return getDriver().getCurrentUrl();
     }
 
-    public void scrollToElementWithJSExec(WebElement element){
-        ((JavascriptExecutor)getDriver()).executeScript("arguments[0].scrollIntoView(false);", element);
-    }
+
     public WebDriver getDriver() {
         return appManager.getDriver();
     }

@@ -1,8 +1,6 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
-import ui.enums.Container;
-import ui.enums.DropDownHeader;
 import ui.initialDriver.AppManager;
 import ui.pages.PageManager;
 import ui.utils.Utils;
@@ -34,20 +32,16 @@ public class MainPageHelper extends BaseHelper {
 
     @Step("Scroll to send button")
     public MainPageHelper scrollToSendButton(){
-        scrollToElementWithJSExec(pageManager.onMainPage().getSendButton());
+        //scrollToElementWithJSExec(pageManager.onMainPage().getSendButton());
         return this;
     }
 
-    @Step("Click send button for check balance")
-    public MainPageHelper clickSendButton(){
-        pageManager.onMainPage().clickSendButton();
-        return this;
-    }
+
 
     @Step("Select captcha")
     public MainPageHelper selectCaptcha(){
-        switchToFrame(pageManager.onMainPage().frame());
-        pageManager.onMainPage().selectCaptcha();
+        //switchToFrame(pageManager.onMainPage().frame());
+        //pageManager.onMainPage().selectCaptcha();
         return this;
     }
 
@@ -61,17 +55,13 @@ public class MainPageHelper extends BaseHelper {
 
     @Step("Change city in header")
     public MainPageHelper changeCity(String city){
-        pageManager.onMainPage().header().dropdown(DropDownHeader.CITY.getText()).click();
-        scrollToElementWithJSExec(pageManager.onMainPage().header().dropdown(DropDownHeader.CITY.getText()).dropdownItem(city));
-        pageManager.onMainPage().header().dropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click();
+        pageManager.onMainPage().changeCity(city);
         return this;
     }
 
     @Step("Change city for check balance")
     public MainPageHelper changeCityForCheckBalance(String city){
-        pageManager.onMainPage().container(Container.CHECK_BALANCE.getContainerClass()).dropdown(DropDownHeader.CITY.getText()).click();
-        scrollToElementWithJSExec(pageManager.onMainPage().container(Container.CHECK_BALANCE.getContainerClass()).dropdown(DropDownHeader.CITY.getText()).dropdownItem(city));
-        pageManager.onMainPage().container(Container.CHECK_BALANCE.getContainerClass()).dropdown(DropDownHeader.CITY.getText()).dropdownItem(city).click();
+        pageManager.onMainPage().changeCityForCheckBalance(city);
         return this;
     }
 
