@@ -25,6 +25,9 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
     default AtlasWebElement getPersonalNumberInput(){
         return container(Container.CHECK_BALANCE.getContainerClass()).input(Input.PERSONAL_NUMBER.getInputClass());
     }
+    default Dropdown getDropDownFromNavigationBar(String header){
+        return navigationBar().dropdown(header);
+    }
 
     default void setInputPersonalNumber(String number){
         getPersonalNumberInput().sendKeys(number);

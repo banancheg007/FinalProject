@@ -65,6 +65,12 @@ public class MainPageHelper extends BaseHelper {
         return this;
     }
 
+    public MainPageHelper selectDropdownItem(String header, String item){
+        pageManager.onMainPage().getDropDownFromNavigationBar(header).click();
+        pageManager.onMainPage().getDropDownFromNavigationBar(header).dropdownItem(item).click();
+        return this;
+    }
+
 
 
 
