@@ -69,7 +69,7 @@ public abstract class EventHandler extends JSWaiter implements WebDriverEventLis
     public void beforeClickOn(WebElement arg0, WebDriver arg1) {
         waitJQueryAngular();
         waitForJQueryLoad();
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", arg0);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(false);", arg0);
     }
 
     @Override
