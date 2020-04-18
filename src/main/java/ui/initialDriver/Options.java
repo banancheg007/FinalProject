@@ -8,13 +8,13 @@ abstract class Options {
 
     ChromeOptions chromeOptionsForJenkins() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("window-size=1800x900");
-        options.addArguments("--headless");
-        options.addArguments("--disable-infobars");
-        options.addArguments("--disable-notifications");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--no-zygote");
-        options.addArguments("--disable-dev-shm-usage");
+        //options.addArguments("window-size=1800x900");
+        //options.addArguments("--headless");
+        //options.addArguments("--disable-infobars");
+        //options.addArguments("--disable-notifications");
+        //options.addArguments("--no-sandbox");
+        //options.addArguments("--no-zygote");
+       // options.addArguments("--disable-dev-shm-usage");
         return options;
     }
 
