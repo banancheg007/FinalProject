@@ -1,5 +1,5 @@
 {
-  "browser.driver" : "CHROsME",
+  "browser.driver" : "CHROME",
   "element.wait" :30,
   "element.poling" :500,
   "element.exist" :2,
