@@ -45,6 +45,7 @@ public class InitialDriver extends Options {
      * There is setting driver by name
      */
     private synchronized WebDriver initialDriver() {
+        System.out.println(DRIVER_NAME);
         switch (DRIVER_NAME) {
             case "CHROME": {
                 WebDriverManager.chromedriver().setup();
