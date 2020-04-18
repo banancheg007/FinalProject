@@ -27,15 +27,15 @@ public class UiTest {
         //System.setProperty("ATLAS_WEBSITE_URL", "https://mclaut.com/");
     }
 
-    @Test(description = "Open main page")
-    public void OpenMainPage() throws InterruptedException {
-       appManager.getMainPageHelper().openMainPage().changeCity(DropdownItem.YURKIVKA.getText());
-        Thread.sleep(5000);
-    }
-    @Test(description = "Open main page2")
-    public void OpenMainPage2() throws InterruptedException {
-        appManager.getMainPageHelper().openMainPage().changeCityForCheckBalance(DropdownItem.SVIDIVOK.getText());
-    }
+//    @Test(description = "Open main page")
+//    public void OpenMainPage() throws InterruptedException {
+//       appManager.getMainPageHelper().openMainPage().changeCity(DropdownItem.YURKIVKA.getText());
+//        Thread.sleep(5000);
+//    }
+//    @Test(description = "Open main page2")
+//    public void OpenMainPage2() throws InterruptedException {
+//        appManager.getMainPageHelper().openMainPage().changeCityForCheckBalance(DropdownItem.SVIDIVOK.getText());
+//    }
     @Test(description = "Open main page3")
     public void OpenMainPage3() throws InterruptedException {
         appManager.getMainPageHelper().openMainPage().selectDropdownItem(DropDownHeader.FOR_HOME.getText(),DropdownItem.PRIVATE_HOUSE.getText());
