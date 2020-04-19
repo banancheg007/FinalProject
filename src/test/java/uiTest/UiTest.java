@@ -23,6 +23,7 @@ public class UiTest {
     @BeforeMethod
     public void setUp() {
         appManager = new AppManager();
+        //
         //System.setProperty("ATLAS_WEBSITE_URL", "https://mclaut.com/");
     }
 
