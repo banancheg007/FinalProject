@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum DropdownItem {
+public enum DropdownCityItem{
     //Cities dropdown items
     BILOZIRYA("Білозір'я"),
     VATUTINE("Ватутіне"),
@@ -62,9 +62,44 @@ public enum DropdownItem {
 
     private String text;
 
-    DropdownItem(String text) {
+    DropdownCityItem(String text) {
         this.text = text;
     }
 
     public String getText(){ return text;}
+
+//    public static void getAllDatas(){
+//        String array[] = new String[DropdownCityItem.values().length];
+//        DropdownCityItem[] dropdownCityItems = DropdownCityItem.values().length;
+//        System.out.println(Arrays.toString(dropdownCityItems));
+//    }
+
+    public static <T extends Enum<T>> void printEnum2(Class<T> aEnum)
+    {
+        // retreive all constants of your enum (reflection!!)
+        System.out.println(java.util.Arrays.asList(aEnum.getEnumConstants()));
+    }
+    // print function: type safe for Enum values
+    public static <T extends Enum<T>> void printEnum(T[] aValues)
+    {
+        System.out.println(java.util.Arrays.asList(aValues));
+    }
+    public static <T extends Enum<T>> String[][] printEnum3(DropdownCityItem[] aValues)
+    {
+        DropdownCityItem[] strings = aValues;
+        String[][] values = new String[aValues.length][aValues.length];
+        int i = 0;
+        for(DropdownCityItem o:strings){
+                System.out.println(o.getText());
+                values[i][0]= o.getText();
+                i++;
+        }
+
+        for (Object k:values){
+            System.out.println((k));
+        }
+        return values;
+    }
+
+
 }
