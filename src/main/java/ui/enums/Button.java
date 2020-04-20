@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum Button {
+public enum Button implements BaseEnum {
     SEND("Відправити");
     private String text;
 
@@ -8,5 +8,6 @@ public enum Button {
         this.text = text;
     }
 
-    public String getText(){ return text;}
+    @Override
+    public String getLocatorString(){ return text;}
 }

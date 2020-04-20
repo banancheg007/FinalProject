@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum Input {
+public enum Input implements BaseEnum {
     PERSONAL_NUMBER("lc");
     private String inputClass;
 
@@ -8,5 +8,6 @@ public enum Input {
         this.inputClass = inputClass;
     }
 
-    public String getInputClass(){ return inputClass;}
+    @Override
+    public String getLocatorString(){ return inputClass;}
 }

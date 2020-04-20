@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum Checkbox {
+public enum Checkbox implements BaseEnum{
     CAPTCHA("recaptcha-checkbox-border");
     private String checkboxClass;
 
@@ -8,5 +8,6 @@ public enum Checkbox {
         this.checkboxClass = checkboxClass;
     }
 
-    public String getCheckboxClass(){ return checkboxClass;}
+    @Override
+    public String getLocatorString(){ return checkboxClass;}
 }

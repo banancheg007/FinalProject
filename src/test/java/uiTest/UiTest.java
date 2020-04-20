@@ -10,6 +10,8 @@ import ui.initialDriver.AppManager;
 import ui.listeners.Listener;
 import ui.utils.TestDataProviders;
 
+import java.lang.reflect.InvocationTargetException;
+
 
 @Epic("Main page")
 @Feature("Authorization")
@@ -28,11 +30,9 @@ public class UiTest {
         //System.setProperty("ATLAS_WEBSITE_URL", "https://mclaut.com/");
     }
 
-    @Test(description = "Open main page", dataProvider = "getCity", dataProviderClass = TestDataProviders.class)
-    public void OpenMainPage(String city) throws InterruptedException {
-       // DropdownCityItem.printEnum3(DropdownCityItem.values());
+    @Test(description = "Open main page", dataProvider = "getCities", dataProviderClass = TestDataProviders.class)
+    public void OpenMainPage(String city) throws InterruptedException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
        appManager.getMainPageHelper().openMainPage().changeCity(city);
-        //Thread.sleep(5000);
     }
 //    @Test(description = "Open main page2")
 //    public void OpenMainPage2() throws InterruptedException {
@@ -43,5 +43,8 @@ public class UiTest {
 //        appManager.getMainPageHelper().openMainPage().selectDropdownItem(DropDownHeader.FOR_HOME.getText(), DropdownCityItem.PRIVATE_HOUSE.getText());
 //        Thread.sleep(5000);
 //    }
+
+
+
 
 }

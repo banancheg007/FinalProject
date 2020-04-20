@@ -11,19 +11,19 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
 
 
     default AtlasWebElement getSendButton(){
-        return container(Container.CHECK_BALANCE.getContainerClass()).button(Button.SEND.getText());
+        return container(Container.CHECK_BALANCE.getLocatorString()).button(Button.SEND.getLocatorString());
     }
 
     default Dropdown getCityDropdownFromHeader(){
-        return header().dropdown(DropDownHeader.CITY.getText());
+        return header().dropdown(DropDownHeader.CITY.getLocatorString());
     }
 
     default Dropdown getCityDropdownForCheckBalance(){
-        return container(Container.CHECK_BALANCE.getContainerClass()).dropdown(DropDownHeader.CITY.getText());
+        return container(Container.CHECK_BALANCE.getLocatorString()).dropdown(DropDownHeader.CITY.getLocatorString());
     }
 
     default AtlasWebElement getPersonalNumberInput(){
-        return container(Container.CHECK_BALANCE.getContainerClass()).input(Input.PERSONAL_NUMBER.getInputClass());
+        return container(Container.CHECK_BALANCE.getLocatorString()).input(Input.PERSONAL_NUMBER.getLocatorString());
     }
     default Dropdown getDropDownFromNavigationBar(String header){
         return navigationBar().dropdown(header);

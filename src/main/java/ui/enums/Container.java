@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum Container {
+public enum Container implements BaseEnum{
     CHECK_BALANCE("col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12");
     private String containerClass;
 
@@ -8,5 +8,6 @@ public enum Container {
         this.containerClass = containerClass;
     }
 
-    public String getContainerClass(){ return containerClass;}
+    @Override
+    public String getLocatorString(){ return containerClass;}
 }

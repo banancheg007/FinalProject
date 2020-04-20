@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum DropDownHeader {
+public enum DropDownHeader implements BaseEnum {
     FOR_HOME("Для Дому"),
     FOR_BUSINESS("Для Бізнесу"),
     ANOTHER_SERVICES("Інші Послуги"),
@@ -14,5 +14,6 @@ public enum DropDownHeader {
         this.text = text;
     }
 
-    public String getText(){ return text;}
+    @Override
+    public String getLocatorString(){ return text;}
 }
