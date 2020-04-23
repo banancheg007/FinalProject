@@ -3,10 +3,10 @@ package ui.utils;
 import org.testng.annotations.DataProvider;
 import ui.enums.DropDownMenuHeaderItem;
 import ui.enums.DropdownCityItem;
+import ui.enums.FloatingActionButton;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 
 public class TestDataProviders {
 
@@ -22,11 +22,16 @@ public class TestDataProviders {
 
     }
 
+    @DataProvider(name = "getFabs")
+    public static Object[][] getFabs(){
+        return getDataFromEnums2(FloatingActionButton.class);
+    }
+
 
 
 
     public static <T extends Enum<T>> Object[][] getDataFromEnums(Class<T> aEnum) {
-        System.out.println(Arrays.asList(aEnum.getEnumConstants()));
+        //System.out.println(Arrays.asList(aEnum.getEnumConstants()));
         Object[] array = aEnum.getEnumConstants();
         Object[][]array2 = new Object[aEnum.getEnumConstants().length][3];
         Method method1 = null;
@@ -52,12 +57,34 @@ public class TestDataProviders {
             }
             i++;
         }
-        System.out.println("********");
-        for (int j = 0;j<aEnum.getEnumConstants().length;j++){
-            for (int k =0;k<1;k++) {
+        return array2;
 
-                System.out.println((String) array2[j][k]);
+    }
+
+
+    public static <T extends Enum<T>> Object[][] getDataFromEnums2(Class<T> aEnum) {
+        //System.out.println(Arrays.asList(aEnum.getEnumConstants()));
+        Object[] array = aEnum.getEnumConstants();
+        Object[][]array2 = new Object[aEnum.getEnumConstants().length][2];
+        Method method2 = null;
+        Method method3 = null;
+        try {
+            method2 = aEnum.getDeclaredMethod("getLocatorString");
+            method3 = aEnum.getDeclaredMethod("getUrl");
+        } catch (NoSuchMethodException exception) {
+            exception.printStackTrace();
+        }
+        int i = 0;
+        for (Object o:array) {
+            try {
+                array2[i][0] = method2.invoke(o, null);
+                array2[i][1] = method3.invoke(o, null);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
             }
+            i++;
         }
         return array2;
 

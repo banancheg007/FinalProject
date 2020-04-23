@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Test suite American taxi" verbose="1">
+<suite name="Test suite American taxi" verbose="1" data-provider-thread-count="2">
     <listeners>
         <listener class-name="ui.listeners.Listener"/>
     </listeners>

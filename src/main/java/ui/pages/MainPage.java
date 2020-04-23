@@ -36,7 +36,9 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
         getPersonalNumberInput().sendKeys(number);
     }
 
-
+    default void clickOnFab(String fab){
+        footer().floatingActionButton(fab).click();
+    }
 
 
     default void changeCityInHeader(String header, String city){

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import ui.initialDriver.AppManager;
 import ui.pages.PageManager;
 
+import java.util.ArrayList;
+
 public class BaseHelper {
 
     protected AppManager appManager;
@@ -30,6 +32,12 @@ public class BaseHelper {
     }
     public void switchToFrame(WebElement element){
         getDriver().switchTo().frame(element);
+    }
+
+    public void switchTab(){
+        ArrayList<String> tabs2 = new ArrayList<>(getDriver().getWindowHandles());
+        getDriver().switchTo().window(tabs2.get(1));
+        System.out.println(tabs2.size());
     }
 
 

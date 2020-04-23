@@ -71,6 +71,13 @@ public class MainPageHelper extends BaseHelper {
         return this;
     }
 
+    @Step("Click on fab")
+    public MainPageHelper clickOnFab(String fab){
+        pageManager.onMainPage().clickOnFab(fab);
+        switchTab();
+        return this;
+    }
+
 
 
 

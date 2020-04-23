@@ -13,11 +13,11 @@ import ui.utils.TestDataProviders;
 
 
 @Epic("Main page")
-@Feature("Authorization")
+@Feature("Smoke tests")
 @Listeners({Listener.class})
 public class UiTest {
 
-
+    //protected static ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
     private AppManager appManager;
 
 
@@ -29,24 +29,40 @@ public class UiTest {
         //System.setProperty("ATLAS_WEBSITE_URL", "https://mclaut.com/");
     }
 
-    @Test(description = "Open main page", dataProvider = "getCities", dataProviderClass = TestDataProviders.class)
-    public void OpenMainPage(String header,String city, String url){
+    @Test(description = "Check references after change cities in header", dataProvider = "getCities", dataProviderClass = TestDataProviders.class)
+    public void CheckReferencesAfterChangeCitiesInHeader(String header,String city, String url){
         appManager.getMainPageHelper().openMainPage().changeCityInHeader(header,city);
         Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(),url);
 
     }
-    @Test(description = "Open main page2", dataProvider = "getCities", dataProviderClass = TestDataProviders.class)
-    public void OpenMainPage2(String header,String city, String url){
+    @Test(description = "Change cities in check balance tab", dataProvider = "getCities", dataProviderClass = TestDataProviders.class)
+    public void ChangeCitiesInCheckBalanceTab(String header,String city, String url){
         appManager.getMainPageHelper().openMainPage().changeCityForCheckBalance(header,city);
     }
-    @Test(description = "Open main page3", dataProvider = "getMenuItems", dataProviderClass = TestDataProviders.class)
-    public void OpenMainPage3(String header,String menuItem, String url) throws InterruptedException {
+    @Test(description = "Check references after select dropdown menu items", dataProvider = "getMenuItems", dataProviderClass = TestDataProviders.class)
+    public void CheckReferencesAfterSelectDropdownMenuItems(String header,String menuItem, String url){
         appManager.getMainPageHelper().openMainPage().selectDropdownItem(header, menuItem);
         Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(),url);
-        Thread.sleep(5000);
+    }
+
+    @Test(description = "Check references after click on fab", dataProvider = "getFabs", dataProviderClass = TestDataProviders.class)
+    public void CheckReferencesAfterClickOnFab(String fab, String url) throws InterruptedException {
+        //appManager = new AppManager();
+        appManager.getMainPageHelper().openMainPage().clickOnFab(fab);
+        Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(),url);
     }
 
 
+//    @Test(description = "Check references after click on fab", dataProvider = "getFabs", dataProviderClass = TestDataProviders.class)
+//    public void abc(String fab, String url) throws InterruptedException {
+//        //appManager = new AppManager();
+//        WebDriverManager.chromedriver().setup();
+//        webDriver.set(new ChromeDriver());
+//        webDriver.get().get(url);
+//        Assert.assertEquals(webDriver.get().getCurrentUrl(),url);
+//        //appManager.getMainPageHelper().openMainPage().clickOnFab(fab);
+//        //Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(),url);
+//    }
 
 
 }
