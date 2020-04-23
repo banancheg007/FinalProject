@@ -54,21 +54,20 @@ public class MainPageHelper extends BaseHelper {
     }
 
     @Step("Change city in header")
-    public MainPageHelper changeCity(String city){
-        pageManager.onMainPage().changeCity(city);
+    public MainPageHelper changeCityInHeader(String header, String city){
+        pageManager.onMainPage().changeCityInHeader(header, city);
         return this;
     }
 
     @Step("Change city for check balance")
-    public MainPageHelper changeCityForCheckBalance(String city){
-        pageManager.onMainPage().changeCityForCheckBalance(city);
+    public MainPageHelper changeCityForCheckBalance(String header, String city){
+        pageManager.onMainPage().changeCityForCheckBalance(header, city);
         return this;
     }
 
     @Step("Select menu item")
-    public MainPageHelper selectDropdownItem(String header, String item){
-        pageManager.onMainPage().getDropDownFromNavigationBar(header).click();
-        pageManager.onMainPage().getDropDownFromNavigationBar(header).dropdownItem(item).click();
+    public MainPageHelper selectDropdownItem(String header, String menuItem){
+        pageManager.onMainPage().changeDropdownItemInNavigationBar(header,menuItem);
         return this;
     }
 

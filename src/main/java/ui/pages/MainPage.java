@@ -3,27 +3,30 @@ package ui.pages;
 import io.qameta.atlas.webdriver.AtlasWebElement;
 import ui.elements.*;
 import ui.enums.Button;
-import ui.enums.Container;
-import ui.enums.DropDownHeader;
 import ui.enums.Input;
+import ui.enums.ContainerEnum;
 
 public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithInput, WithContainer, WithFooter {
 
 
     default AtlasWebElement getSendButton(){
-        return container(Container.CHECK_BALANCE.getLocatorString()).button(Button.SEND.getLocatorString());
+        return container(ContainerEnum.CHECK_BALANCE.getLocatorString()).button(Button.SEND.getLocatorString());
     }
 
-    default Dropdown getCityDropdownFromHeader(){
-        return header().dropdown(DropDownHeader.CITY.getLocatorString());
+    default Dropdown getCityDropdownFromHeader(String header){
+        return header().dropdown(header);
     }
 
-    default Dropdown getCityDropdownForCheckBalance(){
-        return container(Container.CHECK_BALANCE.getLocatorString()).dropdown(DropDownHeader.CITY.getLocatorString());
+    default Dropdown getCityDropdownForCheckBalance(String header){
+        return container(ContainerEnum.CHECK_BALANCE.getLocatorString()).dropdown(header);
+    }
+
+    default  Dropdown getDropdownFromNavigationBar(String header){
+        return navigationBar().dropdown(header);
     }
 
     default AtlasWebElement getPersonalNumberInput(){
-        return container(Container.CHECK_BALANCE.getLocatorString()).input(Input.PERSONAL_NUMBER.getLocatorString());
+        return container(ContainerEnum.CHECK_BALANCE.getLocatorString()).input(Input.PERSONAL_NUMBER.getLocatorString());
     }
     default Dropdown getDropDownFromNavigationBar(String header){
         return navigationBar().dropdown(header);
@@ -36,14 +39,20 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
 
 
 
-    default void changeCity(String city){
-        getCityDropdownFromHeader().click();
-        getCityDropdownFromHeader().dropdownItem(city).click();
+    default void changeCityInHeader(String header, String city){
+        getCityDropdownFromHeader(header).click();
+        getCityDropdownFromHeader(header).dropdownItem(city).click();
     }
 
-    default void changeCityForCheckBalance(String city){
-        getCityDropdownForCheckBalance().click();
-        getCityDropdownForCheckBalance().dropdownItem(city).click();
+    default void changeCityForCheckBalance(String header,String city){
+        getCityDropdownForCheckBalance(header).click();
+        getCityDropdownForCheckBalance(header).dropdownItem(city).click();
+    }
+
+    default  void changeDropdownItemInNavigationBar(String header,String menuItem){
+        getDropdownFromNavigationBar(header).click();
+        getDropdownFromNavigationBar(header).dropdownItem(menuItem).click();
+
     }
 
 
