@@ -23,7 +23,7 @@ public class UiTest {
     @BeforeMethod
     public void setUp() {
        // System.setProperty("console.encoding","utf-8");
-        //appManager = new AppManager();
+        appManager = new AppManager();
 
         //System.setProperty("ATLAS_WEBSITE_URL", "https://mclaut.com/");
     }
