@@ -10,19 +10,19 @@ import java.lang.reflect.Method;
 
 public class TestDataProviders {
 
-    @DataProvider(name = "getCities",parallel = true)
+    @DataProvider(name = "getCities")
     public static Object[][] getCities() {
             return getDataFromEnums(DropdownCityItem.class);
 
     }
 
-    @DataProvider(name = "getMenuItems",parallel = true)
+    @DataProvider(name = "getMenuItems")
     public static Object[][] getMenuItems() {
         return getDataFromEnums(DropDownMenuHeaderItem.class);
 
     }
 
-    @DataProvider(name = "getFabs",parallel = true)
+    @DataProvider(name = "getFabs")
     public static Object[][] getFabs(){
         return getDataFromEnums2(FloatingActionButton.class);
     }
