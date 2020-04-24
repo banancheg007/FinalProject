@@ -1,6 +1,7 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
+import org.testng.Assert;
 import ui.initialDriver.AppManager;
 import ui.pages.PageManager;
 import ui.utils.Utils;
@@ -72,9 +73,19 @@ public class MainPageHelper extends BaseHelper {
     }
 
     @Step("Click on fab")
-    public MainPageHelper clickOnFab(String fab){
+    public MainPageHelper clickOnFab(String fab) throws InterruptedException {
         pageManager.onMainPage().clickOnFab(fab);
+        System.out.println("before switch id= "+Thread.currentThread().getId()+" current url= "+getCurrentUrl());
         switchTab();
+        System.out.println("after switch id= "+Thread.currentThread().getId()+" current url= "+getCurrentUrl());
+        Thread.sleep(5000);
+        System.out.println("after switch id= "+Thread.currentThread().getId()+" current url= "+getCurrentUrl());
+        return this;
+    }
+
+    @Step("Check equals current and expected urls")
+    public MainPageHelper checkEqualsUrlWithCurrent(String expectedUrl){
+        Assert.assertEquals(getCurrentUrl(),expectedUrl);
         return this;
     }
 
