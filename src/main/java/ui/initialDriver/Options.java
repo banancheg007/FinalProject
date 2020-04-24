@@ -6,7 +6,7 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 
 abstract class Options {
 
-    static ChromeOptions chromeOptionsForJenkins() {
+    ChromeOptions chromeOptionsForJenkins() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("window-size=1800x900");
         options.addArguments("--headless");
@@ -18,21 +18,21 @@ abstract class Options {
         return options;
     }
 
-    static ChromeOptions chromeOptionsLocal() {
+    ChromeOptions chromeOptionsLocal() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         options.addArguments("disable-infobars");
         return options;
     }
 
-    static FirefoxOptions firefoxOptions() {
+    FirefoxOptions firefoxOptions() {
         FirefoxOptions options = new FirefoxOptions();
         //options.addArguments("start-maximized");
        // options.addArguments("--disable-infobars");
         return options;
     }
 
-    static InternetExplorerOptions internetExplorerOptions() {
+    InternetExplorerOptions internetExplorerOptions() {
         InternetExplorerOptions options = new InternetExplorerOptions();
         return options;
     }
