@@ -37,6 +37,7 @@ public class UiTest {
     }
     @Test(description = "Change cities in check balance tab", dataProvider = "getCities", dataProviderClass = TestDataProviders.class)
     public void ChangeCitiesInCheckBalanceTab(String header,String city, String url){
+        appManager = new AppManager();
         appManager.getMainPageHelper().openMainPage().changeCityForCheckBalance(header,city);
     }
     @Test(description = "Check references after select dropdown menu items", dataProvider = "getMenuItems", dataProviderClass = TestDataProviders.class)
@@ -50,7 +51,7 @@ public class UiTest {
     public void CheckReferencesAfterClickOnFab(String fab, String url) throws InterruptedException {
         appManager = new AppManager();
         appManager.getMainPageHelper().openMainPage().clickOnFab(fab).checkEqualsUrlWithCurrent(url);
-        System.out.println("before assert id= "+Thread.currentThread().getId()+" current url= "+appManager.getDriver().getCurrentUrl());
+       // System.out.println("before assert id= "+Thread.currentThread().getId()+" current url= "+appManager.getDriver().getCurrentUrl());
         //Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(),url);
     }
 
