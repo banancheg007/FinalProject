@@ -55,6 +55,15 @@ public class UiTest {
         //Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(),url);
     }
 
+    @Test(description = "Check references after click on button in header", dataProvider = "getHeaderButtons", dataProviderClass = TestDataProviders.class)
+    public void CheckReferencesAfterClickOnButtonInHeader(String button, String url) throws InterruptedException {
+        appManager = new AppManager();
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(button).checkEqualsUrlWithCurrent(url);
+        // System.out.println("before assert id= "+Thread.currentThread().getId()+" current url= "+appManager.getDriver().getCurrentUrl());
+        //Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(),url);
+    }
+
+
 
 //    @Test(description = "Check references after click on fab", dataProvider = "getFabs", dataProviderClass = TestDataProviders.class)
 //    public void abc(String fab, String url) throws InterruptedException {

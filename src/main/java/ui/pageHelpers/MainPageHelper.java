@@ -26,7 +26,7 @@ public class MainPageHelper extends BaseHelper {
 //    }
 
     @Step("Set personal number")
-    public MainPageHelper setPersonalNumber(String number) throws InterruptedException {
+    public MainPageHelper setPersonalNumber(String number){
         pageManager.onMainPage().setInputPersonalNumber(number);
         return this;
     }
@@ -60,6 +60,12 @@ public class MainPageHelper extends BaseHelper {
         return this;
     }
 
+    @Step("Click on button in header")
+    public MainPageHelper clickOnButtonInHeader(String button){
+        pageManager.onMainPage().clickOnButtonInHeader(button);
+        return this;
+    }
+
     @Step("Change city for check balance")
     public MainPageHelper changeCityForCheckBalance(String header, String city){
         pageManager.onMainPage().changeCityForCheckBalance(header, city);
@@ -75,11 +81,11 @@ public class MainPageHelper extends BaseHelper {
     @Step("Click on fab")
     public MainPageHelper clickOnFab(String fab) throws InterruptedException {
         pageManager.onMainPage().clickOnFab(fab);
-        System.out.println("before switch id= "+Thread.currentThread().getId()+" current url= "+getCurrentUrl());
+        //System.out.println("before switch id= "+Thread.currentThread().getId()+" current url= "+getCurrentUrl());
         switchTab();
-        System.out.println("after switch id= "+Thread.currentThread().getId()+" current url= "+getCurrentUrl());
-        Thread.sleep(5000);
-        System.out.println("after switch id= "+Thread.currentThread().getId()+" current url= "+getCurrentUrl());
+       // System.out.println("after switch id= "+Thread.currentThread().getId()+" current url= "+getCurrentUrl());
+        //Thread.sleep(5000);
+        //System.out.println("after switch id= "+Thread.currentThread().getId()+" current url= "+getCurrentUrl());
         return this;
     }
 

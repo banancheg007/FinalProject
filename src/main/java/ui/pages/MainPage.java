@@ -2,15 +2,14 @@ package ui.pages;
 
 import io.qameta.atlas.webdriver.AtlasWebElement;
 import ui.elements.*;
-import ui.enums.Button;
 import ui.enums.Input;
 import ui.enums.ContainerEnum;
 
 public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithInput, WithContainer, WithFooter {
 
 
-    default AtlasWebElement getSendButton(){
-        return container(ContainerEnum.CHECK_BALANCE.getLocatorString()).button(Button.SEND.getLocatorString());
+    default void getSendButton(){
+        //return container(ContainerEnum.CHECK_BALANCE.getLocatorString()).button(Button.SEND.getLocatorString());
     }
 
     default Dropdown getCityDropdownFromHeader(String header){
@@ -38,6 +37,10 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
 
     default void clickOnFab(String fab){
         footer().floatingActionButton(fab).click();
+    }
+
+    default void clickOnButtonInHeader(String button){
+        header().button(button).click();
     }
 
 

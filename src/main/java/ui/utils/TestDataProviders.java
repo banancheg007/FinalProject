@@ -1,6 +1,7 @@
 package ui.utils;
 
 import org.testng.annotations.DataProvider;
+import ui.enums.Button;
 import ui.enums.DropDownMenuHeaderItem;
 import ui.enums.DropdownCityItem;
 import ui.enums.FloatingActionButton;
@@ -25,6 +26,11 @@ public class TestDataProviders {
     @DataProvider(name = "getFabs",parallel = true)
     public static Object[][] getFabs(){
         return getDataFromEnums2(FloatingActionButton.class);
+    }
+
+    @DataProvider(name = "getHeaderButtons",parallel = true)
+    public static Object[][] getHeaderButtons(){
+        return getDataFromEnums2(Button.class);
     }
 
 
