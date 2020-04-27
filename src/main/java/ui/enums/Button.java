@@ -1,7 +1,7 @@
 package ui.enums;
 
 public enum Button implements BaseEnum {
-    //SEND("Відправити"),
+    SEND("Відправити",""),
     CONNECT("Підключитись","https://mclaut.com/cherkassy/connect"),
     PAYMANT("Оплата","https://mclaut.com/cherkassy/payment"),
     PERSONAL_CABINET("Особистий кабінет","https://bill.mclaut.com/");

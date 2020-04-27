@@ -1,13 +1,18 @@
 package ui.enums;
 
 public enum Input implements BaseEnum {
-    PERSONAL_NUMBER("lc");
-    private String inputClass;
+    PERSONAL_NUMBER("lc"),
+    SURNAME("name"),
+    NAME("surname"),
+    TELEPHONE("telephone"),
+    ADDRESS("address");
 
-    Input(String inputClass) {
-        this.inputClass = inputClass;
+    private String id;
+
+    Input(String id) {
+        this.id = id;
     }
 
     @Override
-    public String getLocatorString(){ return inputClass;}
+    public String getLocatorString(){ return id;}
 }

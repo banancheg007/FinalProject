@@ -6,9 +6,11 @@ import io.qameta.allure.Feature;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import ui.enums.Button;
 import ui.initialDriver.AppManager;
 import ui.listeners.Listener;
 import ui.utils.TestDataProviders;
+import ui.utils.Utils;
 
 
 @Epic("Main page")
@@ -55,13 +57,20 @@ public class UiTest {
         //Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(),url);
     }
 
-    @Test(description = "Check references after click on button in header", dataProvider = "getHeaderButtons", dataProviderClass = TestDataProviders.class)
+    @Test(description = "Check sending connect request with wrong telephone")
+    public void CheckSendingConnectRequestWithWrongTelephone(){
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.CONNECT.getLocatorString());
+        appManager.getConnectPageHelper().fillConnectFormAndSendRequest(Utils.SURNAME,Utils.NAME,Utils.WRONG_TELEPHONE,Utils.ADDRESS,Utils.MESSAGE).compareTextAfterSendRequestForConnectWithWrongData(Utils.TYPE_CORRECT_PHONE);
+    }
+
+
+  /*  @Test(description = "Check references after click on button in header", dataProvider = "getHeaderButtons", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterClickOnButtonInHeader(String button, String url) throws InterruptedException {
         appManager = new AppManager();
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(button).checkEqualsUrlWithCurrent(url);
         // System.out.println("before assert id= "+Thread.currentThread().getId()+" current url= "+appManager.getDriver().getCurrentUrl());
         //Assert.assertEquals(appManager.getMainPageHelper().getCurrentUrl(),url);
-    }
+    }*/
 
 
 

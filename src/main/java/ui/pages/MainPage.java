@@ -2,15 +2,11 @@ package ui.pages;
 
 import io.qameta.atlas.webdriver.AtlasWebElement;
 import ui.elements.*;
-import ui.enums.Input;
 import ui.enums.ContainerEnum;
+import ui.enums.Input;
 
 public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithInput, WithContainer, WithFooter {
 
-
-    default void getSendButton(){
-        //return container(ContainerEnum.CHECK_BALANCE.getLocatorString()).button(Button.SEND.getLocatorString());
-    }
 
     default Dropdown getCityDropdownFromHeader(String header){
         return header().dropdown(header);
@@ -26,9 +22,6 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
 
     default AtlasWebElement getPersonalNumberInput(){
         return container(ContainerEnum.CHECK_BALANCE.getLocatorString()).input(Input.PERSONAL_NUMBER.getLocatorString());
-    }
-    default Dropdown getDropDownFromNavigationBar(String header){
-        return navigationBar().dropdown(header);
     }
 
     default void setInputPersonalNumber(String number){
@@ -59,6 +52,8 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
         getDropdownFromNavigationBar(header).dropdownItem(menuItem).click();
 
     }
+
+
 
 
 

@@ -27,5 +27,7 @@ public class PageManager {
         return onPage(MainPage.class);
     }
 
+    public ConnectPage onConnectPage(){ return  onPage(ConnectPage.class);}
+
 
 }

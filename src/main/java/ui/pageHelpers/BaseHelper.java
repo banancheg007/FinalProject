@@ -1,7 +1,9 @@
 package ui.pageHelpers;
 
+import io.qameta.atlas.webdriver.AtlasWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import ui.initialDriver.AppManager;
 import ui.pages.PageManager;
 
@@ -38,6 +40,11 @@ public class BaseHelper {
         ArrayList<String> tabs2 = new ArrayList<>(getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs2.get(1));
         System.out.println(tabs2.size());
+    }
+
+
+    public void compareStringWithTextFromElement(String expectedString, AtlasWebElement actualElementWithText){
+        Assert.assertEquals(expectedString,actualElementWithText.getText());
     }
 
 
