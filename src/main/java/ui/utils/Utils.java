@@ -10,4 +10,11 @@ public class Utils {
     public final static String ADDRESS = "Черкассы, бул. Шевченка, 777";
     public final static String TYPE_CORRECT_PHONE = "Корректно введіть телефоний номер";
     public final static String CHOOSE_CITY = "Виберіть місто";
+    public final static String NEED_TO_CHOOSE_A_CITY = "Необхідно обрати місто!";
+    public final static String WRONG_DATA = "Неправильно вказані дані!";
+    public final static String CHERKASY = "Черкаси";
+    public static final String LOGIN ="odes8_1k218";
+    public static final String PASSWORD ="JbUnf864G8";
+    public static final String EMPTY_LOGIN ="";
+    public static final String EMPTY_PASSWORD ="";
 }

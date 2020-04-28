@@ -4,6 +4,7 @@
         <listener class-name="ui.listeners.Listener"/>
     </listeners>
     <test name="Ui tests">
+        <parameter name="" value=""></parameter>
         <classes>
             <class name="uiTest.UiTest"/>
         </classes>

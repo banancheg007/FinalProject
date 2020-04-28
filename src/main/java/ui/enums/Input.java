@@ -5,7 +5,12 @@ public enum Input implements BaseEnum {
     SURNAME("name"),
     NAME("surname"),
     TELEPHONE("telephone"),
-    ADDRESS("address");
+    ADDRESS("address"),
+    BTN_CITY_SELECT("btn_city_select"),
+    BTN_LOGIN("btn_login"),
+    LOGIN("login"),
+    PASSWORD("password");
+
 
     private String id;
 

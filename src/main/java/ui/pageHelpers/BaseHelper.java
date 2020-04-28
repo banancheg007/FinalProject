@@ -3,6 +3,8 @@ package ui.pageHelpers;
 import io.qameta.atlas.webdriver.AtlasWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import ui.initialDriver.AppManager;
 import ui.pages.PageManager;
@@ -44,7 +46,12 @@ public class BaseHelper {
 
 
     public void compareStringWithTextFromElement(String expectedString, AtlasWebElement actualElementWithText){
-        Assert.assertEquals(expectedString,actualElementWithText.getText());
+        Assert.assertEquals(actualElementWithText.getText(),expectedString);
+    }
+
+    public void waitForTextInElement(String expectedText,WebElement element){
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(),3);
+        webDriverWait.until(ExpectedConditions.textToBePresentInElement(element,expectedText));
     }
 
 

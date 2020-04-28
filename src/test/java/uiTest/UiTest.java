@@ -63,6 +63,26 @@ public class UiTest {
         appManager.getConnectPageHelper().fillConnectFormAndSendRequest(Utils.SURNAME,Utils.NAME,Utils.WRONG_TELEPHONE,Utils.ADDRESS,Utils.MESSAGE).compareTextAfterSendRequestForConnectWithWrongData(Utils.TYPE_CORRECT_PHONE);
     }
 
+    @Test(description = "Check sending connect request with correct telephone")
+    public void CheckSendingConnectRequestWithCorrectTelephone(){
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.CONNECT.getLocatorString());
+        appManager.getConnectPageHelper().fillConnectFormAndSendRequest(Utils.SURNAME,Utils.NAME,Utils.CORRECT_TELEPHONE,Utils.ADDRESS,Utils.MESSAGE).compareTextAfterSendRequestForConnectWithWrongData(Utils.CHOOSE_CITY);
+    }
+
+    @Test(description = "Empty login and password sign in")
+    public void signInEmptyData(){
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
+        appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.EMPTY_LOGIN, Utils.EMPTY_PASSWORD).compareTextAfterLoginWithWrongData(Utils.WRONG_DATA);
+    }
+
+    @Test(description = "Sign in with correct data")
+    public void signIn(){
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
+        appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
+    }
+
+
+
 
   /*  @Test(description = "Check references after click on button in header", dataProvider = "getHeaderButtons", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterClickOnButtonInHeader(String button, String url) throws InterruptedException {
