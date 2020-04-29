@@ -1,7 +1,6 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
-import org.testng.Assert;
 import ui.initialDriver.AppManager;
 import ui.pages.PageManager;
 import ui.utils.Utils;
@@ -89,11 +88,7 @@ public class MainPageHelper extends BaseHelper {
         return this;
     }
 
-    @Step("Check equals current and expected urls")
-    public MainPageHelper checkEqualsUrlWithCurrent(String expectedUrl){
-        Assert.assertEquals(getCurrentUrl(),expectedUrl);
-        return this;
-    }
+
 
 
 

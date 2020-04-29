@@ -1,5 +1,6 @@
 package ui.pageHelpers;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -41,6 +42,12 @@ public class BaseHelper {
         ArrayList<String> tabs2 = new ArrayList<>(getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs2.get(1));
         System.out.println(tabs2.size());
+    }
+
+    @Step("Check equals current and expected urls")
+    public BaseHelper checkEqualsUrlWithCurrent(String expectedUrl){
+        Assert.assertEquals(getCurrentUrl(),expectedUrl);
+        return this;
     }
 
 

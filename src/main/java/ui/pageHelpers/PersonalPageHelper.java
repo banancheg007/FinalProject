@@ -11,7 +11,15 @@ public class PersonalPageHelper extends BaseHelper{
     }
 
     @Step("Compare expected full name with the authorized user")
-    public void compareExpectedNameWithAuthorizedUser(String expectedFullName){
+    public PersonalPageHelper compareExpectedNameWithAuthorizedUser(String expectedFullName){
         compareString(expectedFullName,pageManager.onPersonalPage().getFullNameOfAuthorizedUser());
+        return this;
     }
+
+    @Step("Logout")
+    public PersonalPageHelper logout(){
+        pageManager.onPersonalPage().logout();
+        return this;
+    }
+
 }

@@ -80,6 +80,13 @@ public class UiTest {
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
         appManager.getPersonalPageHelper().compareExpectedNameWithAuthorizedUser(Utils.FULL_NAME_ACTIVE_ABONENT);
+    }
+
+    @Test(description = "Logout test")
+    public void Logout() throws InterruptedException {
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
+        appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
+        appManager.getPersonalPageHelper().logout().checkEqualsUrlWithCurrent(Button.EXIT.getUrl());
         Thread.sleep(5000);
     }
 
