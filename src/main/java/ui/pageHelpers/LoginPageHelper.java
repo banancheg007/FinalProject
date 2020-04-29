@@ -21,7 +21,7 @@ public class LoginPageHelper extends BaseHelper{
         pageManager.onLoginPage().cityDropdownItem(city).click();
         pageManager.onLoginPage().input(Input.BTN_CITY_SELECT.getLocatorString()).click();
         pageManager.onLoginPage().input(Input.LOGIN.getLocatorString()).sendKeys(login);
-        pageManager.onLoginPage().input(Input.PASSWORD.getLocatorString()).sendKeys(login);
+        pageManager.onLoginPage().input(Input.PASSWORD.getLocatorString()).sendKeys(password);
         pageManager.onLoginPage().input(Input.BTN_LOGIN.getLocatorString()).click();
         return this;
     }
@@ -33,7 +33,7 @@ public class LoginPageHelper extends BaseHelper{
         //pageManager.onLoginPage().container(ContainerEnum.AUTH.getLocatorString()).waitUntil(anyOf(displayed(),text(Utils.NEED_TO_CHOOSE_A_CITY)));
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(),3);
         webDriverWait.until(ExpectedConditions.textToBePresentInElement(pageManager.onLoginPage().container(ContainerEnum.AUTH.getLocatorString()),expectedString));
-        compareStringWithTextFromElement(expectedString,pageManager.onLoginPage().container(ContainerEnum.AUTH.getLocatorString()));
+        compareString(expectedString,pageManager.onLoginPage().container(ContainerEnum.AUTH.getLocatorString()).getText());
         return this;
     }
 }

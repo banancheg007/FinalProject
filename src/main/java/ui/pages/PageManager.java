@@ -28,7 +28,10 @@ public class PageManager {
     }
 
     public ConnectPage onConnectPage(){ return  onPage(ConnectPage.class);}
+
     public LoginPage onLoginPage(){ return  onPage(LoginPage.class);}
+
+    public PersonalPage onPersonalPage(){ return  onPage(PersonalPage.class);}
 
 
 }

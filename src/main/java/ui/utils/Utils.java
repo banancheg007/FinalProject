@@ -17,4 +17,5 @@ public class Utils {
     public static final String PASSWORD ="JbUnf864G8";
     public static final String EMPTY_LOGIN ="";
     public static final String EMPTY_PASSWORD ="";
+    public static final String FULL_NAME_ACTIVE_ABONENT ="Скрыпник Марина Василевна Активний";
 }

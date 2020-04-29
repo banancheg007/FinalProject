@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import ui.pageHelpers.ConnectPageHelper;
 import ui.pageHelpers.LoginPageHelper;
 import ui.pageHelpers.MainPageHelper;
+import ui.pageHelpers.PersonalPageHelper;
 import ui.pages.PageManager;
 
 public class AppManager {
@@ -15,6 +16,7 @@ public class AppManager {
     private MainPageHelper mainPageHelper = new MainPageHelper(this,pageManager);
     private ConnectPageHelper connectPageHelper = new ConnectPageHelper(this, pageManager);
     private LoginPageHelper loginPageHelper = new LoginPageHelper(this,pageManager);
+    private PersonalPageHelper personalPageHelper = new PersonalPageHelper(this,pageManager);
 
 
     public AppManager(){
@@ -32,7 +34,10 @@ public class AppManager {
     public ConnectPageHelper getConnectPageHelper(){
         return connectPageHelper;
     }
+
     public LoginPageHelper getLoginPageHelper(){ return loginPageHelper; }
+
+    public PersonalPageHelper getPersonalPageHelper(){ return personalPageHelper; }
 
 
 }

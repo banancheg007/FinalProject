@@ -26,7 +26,7 @@ public class ConnectPageHelper extends BaseHelper {
 
     @Step("Compare expected string with text after send request for connecting")
     public ConnectPageHelper compareTextAfterSendRequestForConnectWithWrongData(String expectedString){
-        compareStringWithTextFromElement(expectedString,pageManager.onConnectPage().container(ContainerEnum.CONNECT_REQUEST.getLocatorString()).paragraph());
+        compareString(expectedString,pageManager.onConnectPage().container(ContainerEnum.CONNECT_REQUEST.getLocatorString()).paragraph().getText());
         return this;
     }
 

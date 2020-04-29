@@ -1,6 +1,5 @@
 package ui.pageHelpers;
 
-import io.qameta.atlas.webdriver.AtlasWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -45,8 +44,8 @@ public class BaseHelper {
     }
 
 
-    public void compareStringWithTextFromElement(String expectedString, AtlasWebElement actualElementWithText){
-        Assert.assertEquals(actualElementWithText.getText(),expectedString);
+    public void compareString(String expectedString, String actualText){
+        Assert.assertEquals(actualText,expectedString);
     }
 
     public void waitForTextInElement(String expectedText,WebElement element){

@@ -70,15 +70,17 @@ public class UiTest {
     }
 
     @Test(description = "Empty login and password sign in")
-    public void signInEmptyData(){
+    public void signInEmptyData() throws InterruptedException {
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.EMPTY_LOGIN, Utils.EMPTY_PASSWORD).compareTextAfterLoginWithWrongData(Utils.WRONG_DATA);
     }
 
     @Test(description = "Sign in with correct data")
-    public void signIn(){
+    public void signIn() throws InterruptedException {
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
+        appManager.getPersonalPageHelper().compareExpectedNameWithAuthorizedUser(Utils.FULL_NAME_ACTIVE_ABONENT);
+        Thread.sleep(5000);
     }
 
 
