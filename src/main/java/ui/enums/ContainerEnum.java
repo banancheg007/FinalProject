@@ -15,6 +15,7 @@ public enum ContainerEnum implements BaseEnum{
     PERSONAL_PAGE_ACTION("item action hvr-bounce-to-bottom"),
     PERSONAL_PAGE_INNER_DATA("sub-title"),
     PERSONAL_CABINET_MENU("menu"),
+    PAYMENTS_HISTORY("data-item data-center"),
     CONNECT_REQUEST("card-body px-lg-5 pt-0");
 
     private String containerClass;

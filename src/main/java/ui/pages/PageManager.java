@@ -39,5 +39,7 @@ public class PageManager {
 
     public ServicesPage onServicesPage(){ return  onPage(ServicesPage.class);}
 
+    public PaymentsHistoryPage onPaymentsHistoryPage(){ return  onPage(PaymentsHistoryPage.class);}
+
 
 }

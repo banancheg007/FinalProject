@@ -3,9 +3,11 @@ package ui.enums;
 public enum Button implements BaseEnum {
     SEND("Відправити",""),
     CONNECT("Підключитись","https://mclaut.com/cherkassy/connect"),
-    PAYMANT("Оплата","https://mclaut.com/cherkassy/payment"),
+    PAYMENT("Оплата","https://mclaut.com/cherkassy/payment"),
     EXIT("Вийти","https://bill.mclaut.com/client/cherkassy"),
     PERSONAL_CABINET("Особистий кабінет","https://bill.mclaut.com/"),
+    VIEW_PAYMENT_HISTORY("Переглянути","https://bill.mclaut.com/client/cherkassy/balance/payments"),
+
 
     ABONENT_BUTTON_PERSONAL_CABINET("Абонент","https://bill.mclaut.com/client/cherkassy/info"),
     INTERNET_BUTTON_PERSONAL_CABINET("Інтернет","https://bill.mclaut.com/client/cherkassy/user/32932"),

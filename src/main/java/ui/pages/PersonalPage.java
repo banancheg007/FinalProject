@@ -19,4 +19,8 @@ public interface PersonalPage extends BasePage, WithButton, WithContainer {
     default void goToInternetPage(){
         container(ContainerEnum.PERSONAL_PAGE_INTERNET.getLocatorString()).click();
     }
+
+    default void goToBalancePage(){
+        container(ContainerEnum.PERSONAL_PAGE_BALANCE.getLocatorString()).click();
+    }
 }

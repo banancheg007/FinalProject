@@ -27,4 +27,10 @@ public class PersonalPageHelper extends BaseHelper{
         pageManager.onPersonalPage().goToInternetPage();
         return this;
     }
+
+    @Step("Go to balance page")
+    public PersonalPageHelper goToBalancePage(){
+        pageManager.onPersonalPage().goToBalancePage();
+        return this;
+    }
 }

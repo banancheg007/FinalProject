@@ -17,6 +17,7 @@ public class AppManager {
     private BalancePageHelper balancePageHelper = new BalancePageHelper(this,pageManager);
     private InternetPageHelper internetPageHelper = new InternetPageHelper(this,pageManager);
     private ServicesPageHelper servicesPageHelper = new ServicesPageHelper(this,pageManager);
+    private PaymentsHistoryPageHelper paymentsHistoryPageHelper = new PaymentsHistoryPageHelper(this,pageManager);
 
 
     public AppManager(){
@@ -44,6 +45,8 @@ public class AppManager {
     public BalancePageHelper getBalancePageHelper(){ return balancePageHelper; }
 
     public ServicesPageHelper getServicesPageHelper(){ return servicesPageHelper; }
+
+    public PaymentsHistoryPageHelper getPaymentsHistoryPageHelper(){ return paymentsHistoryPageHelper; }
 
 
 }

@@ -99,6 +99,16 @@ public class UiTest {
         //Thread.sleep(5000);
     }
 
+    @Test(description = "View payments history")
+    public void ViewPaymentsHistory() throws InterruptedException {
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
+        appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
+        appManager.getPersonalPageHelper().goToBalancePage();
+        appManager.getBalancePageHelper().goToPaymentsHistoryPage();
+        //appManager.getInternetPageHelper().compareExpectedLoginWithAuthorizedUser(Utils.LOGIN).compareExpectedStatusWithAuthorizedUser(Utils.STATUS_ACTIVE).compareExpectedOrderDateWithAuthorizedUser(Utils.ORDER_DATE);
+        Thread.sleep(5000);
+    }
+
 
 
 
