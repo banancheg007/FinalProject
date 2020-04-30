@@ -18,4 +18,7 @@ public class Utils {
     public static final String EMPTY_LOGIN ="";
     public static final String EMPTY_PASSWORD ="";
     public static final String FULL_NAME_ACTIVE_ABONENT ="Скрыпник Марина Василевна Активний";
+    public static final String STATUS_ACTIVE ="Активний";
+    public static final String ORDER_DATE ="20.04.2015";
+
 }

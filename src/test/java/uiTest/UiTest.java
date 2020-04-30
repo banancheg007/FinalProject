@@ -90,6 +90,15 @@ public class UiTest {
         Thread.sleep(5000);
     }
 
+    @Test(description = "Internet page")
+    public void InternetPage() throws InterruptedException {
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
+        appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
+        appManager.getPersonalPageHelper().goToInternetPage();
+        appManager.getInternetPageHelper().compareExpectedLoginWithAuthorizedUser(Utils.LOGIN).compareExpectedStatusWithAuthorizedUser(Utils.STATUS_ACTIVE).compareExpectedOrderDateWithAuthorizedUser(Utils.ORDER_DATE);
+        Thread.sleep(5000);
+    }
+
 
 
 

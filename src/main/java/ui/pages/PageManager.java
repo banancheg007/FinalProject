@@ -33,5 +33,11 @@ public class PageManager {
 
     public PersonalPage onPersonalPage(){ return  onPage(PersonalPage.class);}
 
+    public BalancePage onBalancePage(){ return  onPage(BalancePage.class);}
+
+    public InternetPage onInternetPage(){ return  onPage(InternetPage.class);}
+
+    public ServicesPage onServicesPage(){ return  onPage(ServicesPage.class);}
+
 
 }

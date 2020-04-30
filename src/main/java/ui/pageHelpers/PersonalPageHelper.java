@@ -22,4 +22,9 @@ public class PersonalPageHelper extends BaseHelper{
         return this;
     }
 
+    @Step("Go to internet page")
+    public PersonalPageHelper goToInternetPage(){
+        pageManager.onPersonalPage().goToInternetPage();
+        return this;
+    }
 }

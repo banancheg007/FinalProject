@@ -1,10 +1,7 @@
 package ui.initialDriver;
 
 import org.openqa.selenium.WebDriver;
-import ui.pageHelpers.ConnectPageHelper;
-import ui.pageHelpers.LoginPageHelper;
-import ui.pageHelpers.MainPageHelper;
-import ui.pageHelpers.PersonalPageHelper;
+import ui.pageHelpers.*;
 import ui.pages.PageManager;
 
 public class AppManager {
@@ -17,6 +14,9 @@ public class AppManager {
     private ConnectPageHelper connectPageHelper = new ConnectPageHelper(this, pageManager);
     private LoginPageHelper loginPageHelper = new LoginPageHelper(this,pageManager);
     private PersonalPageHelper personalPageHelper = new PersonalPageHelper(this,pageManager);
+    private BalancePageHelper balancePageHelper = new BalancePageHelper(this,pageManager);
+    private InternetPageHelper internetPageHelper = new InternetPageHelper(this,pageManager);
+    private ServicesPageHelper servicesPageHelper = new ServicesPageHelper(this,pageManager);
 
 
     public AppManager(){
@@ -38,6 +38,12 @@ public class AppManager {
     public LoginPageHelper getLoginPageHelper(){ return loginPageHelper; }
 
     public PersonalPageHelper getPersonalPageHelper(){ return personalPageHelper; }
+
+    public InternetPageHelper getInternetPageHelper(){ return internetPageHelper; }
+
+    public BalancePageHelper getBalancePageHelper(){ return balancePageHelper; }
+
+    public ServicesPageHelper getServicesPageHelper(){ return servicesPageHelper; }
 
 
 }
