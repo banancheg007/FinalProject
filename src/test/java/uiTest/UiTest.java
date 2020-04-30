@@ -87,7 +87,7 @@ public class UiTest {
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
         appManager.getPersonalPageHelper().logout().checkEqualsUrlWithCurrent(Button.EXIT.getUrl());
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
     }
 
     @Test(description = "Internet page")
@@ -96,7 +96,7 @@ public class UiTest {
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
         appManager.getPersonalPageHelper().goToInternetPage();
         appManager.getInternetPageHelper().compareExpectedLoginWithAuthorizedUser(Utils.LOGIN).compareExpectedStatusWithAuthorizedUser(Utils.STATUS_ACTIVE).compareExpectedOrderDateWithAuthorizedUser(Utils.ORDER_DATE);
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
     }
 
 
