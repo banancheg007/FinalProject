@@ -20,5 +20,10 @@ public class Utils {
     public static final String FULL_NAME_ACTIVE_ABONENT ="Скрыпник Марина Василевна Активний";
     public static final String STATUS_ACTIVE ="Активний";
     public static final String ORDER_DATE ="20.04.2015";
+    public static final String PAYMENT ="Оплата";
+    public static final String ADDITION="поповнення";
+    public static final String INTERNET="Інтернет";
+    public static final String IPTV="IPTV";
+
 
 }

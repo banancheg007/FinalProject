@@ -7,10 +7,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.enums.Button;
+import ui.enums.DropDownHistoryItems;
 import ui.initialDriver.AppManager;
 import ui.listeners.Listener;
 import ui.utils.TestDataProviders;
 import ui.utils.Utils;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 @Epic("Main page")
@@ -83,15 +88,15 @@ public class UiTest {
     }
 
     @Test(description = "Logout test")
-    public void Logout() throws InterruptedException {
+    public void Logout(){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
         appManager.getPersonalPageHelper().logout().checkEqualsUrlWithCurrent(Button.EXIT.getUrl());
         //Thread.sleep(5000);
     }
 
-    @Test(description = "Internet page")
-    public void InternetPage() throws InterruptedException {
+    @Test(description = "Displaying user information test")
+    public void InternetPage(){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
         appManager.getPersonalPageHelper().goToInternetPage();
@@ -99,15 +104,49 @@ public class UiTest {
         //Thread.sleep(5000);
     }
 
-    @Test(description = "View payments history")
-    public void ViewPaymentsHistory() throws InterruptedException {
+    @Test(description = "Displaying history for period")
+    public void HistoryForPeriod() throws InterruptedException, ParseException {
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
         appManager.getPersonalPageHelper().goToBalancePage();
         appManager.getBalancePageHelper().goToPaymentsHistoryPage();
         //appManager.getInternetPageHelper().compareExpectedLoginWithAuthorizedUser(Utils.LOGIN).compareExpectedStatusWithAuthorizedUser(Utils.STATUS_ACTIVE).compareExpectedOrderDateWithAuthorizedUser(Utils.ORDER_DATE);
-        Thread.sleep(5000);
+        appManager.getPaymentsHistoryPageHelper().showHistoryForPeriodAndType(DropDownHistoryItems.YEAR_2019,DropDownHistoryItems.DECEMBER, DropDownHistoryItems.ALL_TYPES).waitForLoadData().compareMonthAndYearResults(DropDownHistoryItems.DECEMBER.getNumericalEquivalent(),Integer.parseInt(DropDownHistoryItems.YEAR_2019.getLocatorString()));
+        //Thread.sleep(5000);
     }
+
+    @Test(description = "Displaying write offs for period")
+    public void WriteOffsForPeriod() throws InterruptedException, ParseException {
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
+        appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
+        appManager.getPersonalPageHelper().goToBalancePage();
+        appManager.getBalancePageHelper().goToPaymentsHistoryPage();
+        //appManager.getInternetPageHelper().compareExpectedLoginWithAuthorizedUser(Utils.LOGIN).compareExpectedStatusWithAuthorizedUser(Utils.STATUS_ACTIVE).compareExpectedOrderDateWithAuthorizedUser(Utils.ORDER_DATE);
+        appManager.getPaymentsHistoryPageHelper().showHistoryForPeriodAndType(DropDownHistoryItems.YEAR_2018,DropDownHistoryItems.SEPTEMBER, DropDownHistoryItems.WRITE_OFFS).waitForLoadData().compareWriteOffsReason();
+        //Thread.sleep(5000);
+    }
+
+    @Test(description = "Displaying income for period")
+    public void IncomeForPeriod() throws InterruptedException, ParseException {
+        appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getLocatorString());
+        appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
+        appManager.getPersonalPageHelper().goToBalancePage();
+        appManager.getBalancePageHelper().goToPaymentsHistoryPage();
+        //appManager.getInternetPageHelper().compareExpectedLoginWithAuthorizedUser(Utils.LOGIN).compareExpectedStatusWithAuthorizedUser(Utils.STATUS_ACTIVE).compareExpectedOrderDateWithAuthorizedUser(Utils.ORDER_DATE);
+        appManager.getPaymentsHistoryPageHelper().showHistoryForPeriodAndType(DropDownHistoryItems.YEAR_2020,DropDownHistoryItems.JANUARY, DropDownHistoryItems.INCOME).waitForLoadData().compareIncomeReason();
+        //Thread.sleep(5000);
+    }
+
+
+    @Test
+    public void Test() throws ParseException {
+        String currentDate ="28.09.2019";
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new SimpleDateFormat("dd.MM.yy").parse(currentDate));
+        System.out.println(calendar.get(Calendar.MONTH));
+        System.out.println(calendar.get(Calendar.YEAR));
+    }
+
 
 
 

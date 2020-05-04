@@ -16,8 +16,9 @@ public enum Button implements BaseEnum {
     PAYMENT_BUTTON_PERSONAL_CABINET("Оплата","https://bill.mclaut.com/client/cherkassy/pay"),
     NEWS_BUTTON_PERSONAL_CABINET("Новини","https://bill.mclaut.com/client/cherkassy/news"),
     REQUESTS_BUTTON_PERSONAL_CABINET("Заявки","https://bill.mclaut.com/client/cherkassy/ticket"),
-    ACTION_BUTTON_PERSONAL_CABINET("Акції","https://bill.mclaut.com/client/cherkassy/share");
+    ACTION_BUTTON_PERSONAL_CABINET("Акції","https://bill.mclaut.com/client/cherkassy/share"),
 
+    SHOW("Показати", "https://bill.mclaut.com/client/cherkassy/balance/payments");
 
     private String text;
     private String url;
