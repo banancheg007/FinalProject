@@ -27,12 +27,18 @@ public class InitialDriver extends Options {
         return driverThread.get();
     }
 
+    public void setBrowser(String browser){
+        this.browser = browser;
+    }
+
     /*
      * There is pre-initialization of the driver and his way that is it prior to calling object
      */
     private static ThreadLocal<InitialDriver> driverThread = new ThreadLocal<>();
 
     public WebDriver driver;
+
+    public String browser;
 
     public WebDriver getDriver() {
         if (driver == null) {
@@ -46,36 +52,34 @@ public class InitialDriver extends Options {
      */
     private synchronized WebDriver initialDriver() {
         System.out.println(DRIVER_NAME);
-        switch (DRIVER_NAME) {
-            case "CHROME": {
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver(chromeOptionsLocal());
-                break;
-            }
-            case "FIREFOX": {
-                WebDriverManager.firefoxdriver().setup();
-                //System.setProperty("webdriver.gecko.driver","C:\\workspace\\FinalProject\\src\\main\\resources\\geckodriver.exe");
-                driver = new FirefoxDriver(firefoxOptions());
-                break;
-            }
-            case "EDGE": {
-                WebDriverManager.edgedriver().setup();
-               /* InternetExplorerDriverService service = new InternetExplorerDriverService.Builder()
-                        .withLogLevel(InternetExplorerDriverLogLevel.TRACE)
-                        .withLogFile(new File("C:\\iedriverserver.log"))
-                        .build();*/
+        if(!(browser ==null) ) {
+            switch (browser) {
+                case "chrome": {
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver(chromeOptionsLocal());
+                    break;
+                }
+                case "firefox": {
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver(firefoxOptions());
+                    break;
+                }
+                case "edge": {
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver(edgeOptions());
+                    driver.manage().window().maximize();
+                    break;
+                }
 
-                //System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
-                driver = new EdgeDriver(edgeOptions());//service);
-                driver.manage().window().maximize();
-                break;
+                default: {
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver(chromeOptionsForJenkins());
+                    break;
+                }
             }
-
-            default: {
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver(chromeOptionsForJenkins());
-                break;
-            }
+        }else{
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(chromeOptionsLocal());
         }
 
         EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver);

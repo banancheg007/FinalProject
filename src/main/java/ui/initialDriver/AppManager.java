@@ -24,6 +24,10 @@ public class AppManager {
         System.out.println("AppManager create");
     }
 
+    public void setBrowser(String browser){
+        InitialDriver.getInstance().setBrowser(browser);
+    }
+
     public WebDriver getDriver(){
         return  driver;
     }
