@@ -18,7 +18,7 @@ public class BaseHelper {
     protected PageManager pageManager;
 
     void openUrl(String url){
-        getDriver().get(url);
+        getDriver().navigate().to(url);
     }
 
     BaseHelper(AppManager appManager, PageManager pageManager){

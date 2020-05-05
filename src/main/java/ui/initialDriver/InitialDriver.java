@@ -4,8 +4,8 @@ package ui.initialDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import ui.events.EventHandler;
 import ui.events.EventLogger;
@@ -58,9 +58,16 @@ public class InitialDriver extends Options {
                 driver = new FirefoxDriver(firefoxOptions());
                 break;
             }
-            case "IE": {
-                WebDriverManager.operadriver().setup();
-                driver = new OperaDriver();
+            case "EDGE": {
+                WebDriverManager.edgedriver().setup();
+               /* InternetExplorerDriverService service = new InternetExplorerDriverService.Builder()
+                        .withLogLevel(InternetExplorerDriverLogLevel.TRACE)
+                        .withLogFile(new File("C:\\iedriverserver.log"))
+                        .build();*/
+
+                //System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
+                driver = new EdgeDriver(edgeOptions());//service);
+                driver.manage().window().maximize();
                 break;
             }
 

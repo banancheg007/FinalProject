@@ -1,10 +1,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Test suite American taxi" verbose="1" data-provider-thread-count="2">
+<suite name="Final project" parallel="tests">
     <listeners>
         <listener class-name="ui.listeners.Listener"/>
     </listeners>
-    <test name="Ui tests">
-        <parameter name="" value=""></parameter>
+    <test name="ChromeTestCases">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="uiTest.UiTest"/>
+        </classes>
+    </test>
+    <test name="FirefoxTestCases">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="uiTest.UiTest"/>
+        </classes>
+    </test>
+    <test name="EdgeTestCases">
+        <parameter name="browser" value="edge"/>
         <classes>
             <class name="uiTest.UiTest"/>
         </classes>
