@@ -22,15 +22,10 @@ public class PersonalPageHelper extends BaseHelper{
         return this;
     }
 
-    @Step("Go to internet page")
-    public PersonalPageHelper goToInternetPage(){
-        pageManager.onPersonalPage().goToInternetPage();
+    @Step("Go to page")
+    public PersonalPageHelper goToPage(String nextPageNavigateContainerClass){
+        pageManager.onPersonalPage().goToPage(nextPageNavigateContainerClass);
         return this;
     }
 
-    @Step("Go to balance page")
-    public PersonalPageHelper goToBalancePage(){
-        pageManager.onPersonalPage().goToBalancePage();
-        return this;
-    }
 }

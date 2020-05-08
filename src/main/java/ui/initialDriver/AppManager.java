@@ -18,6 +18,11 @@ public class AppManager {
     private InternetPageHelper internetPageHelper = new InternetPageHelper(this,pageManager);
     private ServicesPageHelper servicesPageHelper = new ServicesPageHelper(this,pageManager);
     private PaymentsHistoryPageHelper paymentsHistoryPageHelper = new PaymentsHistoryPageHelper(this,pageManager);
+    private AbonentPageHelper abonentPageHelper = new AbonentPageHelper(this,pageManager);
+    private ActionsPageHelper actionsPageHelper = new ActionsPageHelper(this,pageManager);
+    private NewsPageHelper newsPageHelper = new NewsPageHelper(this,pageManager);
+    private PaymentsPageHelper paymentsPageHelper = new PaymentsPageHelper(this,pageManager);
+    private RequestsPageHelper requestsPageHelper = new RequestsPageHelper(this,pageManager);
 
 
     public AppManager(){
@@ -49,6 +54,17 @@ public class AppManager {
     public BalancePageHelper getBalancePageHelper(){ return balancePageHelper; }
 
     public ServicesPageHelper getServicesPageHelper(){ return servicesPageHelper; }
+
+    public AbonentPageHelper getAbonentPageHelper(){ return abonentPageHelper; }
+
+    public ActionsPageHelper getActionsPageHelper(){ return actionsPageHelper; }
+
+    public NewsPageHelper getNewsPageHelper(){ return newsPageHelper; }
+
+    public PaymentsPageHelper getPaymentsPageHelper(){ return paymentsPageHelper; }
+
+    public RequestsPageHelper getRequestsPageHelper(){ return requestsPageHelper; }
+
 
     public PaymentsHistoryPageHelper getPaymentsHistoryPageHelper(){ return paymentsHistoryPageHelper; }
 

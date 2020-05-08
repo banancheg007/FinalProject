@@ -13,7 +13,7 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
     }
 
     default Dropdown getCityDropdownForCheckBalance(String header){
-        return container(ContainerEnum.CHECK_BALANCE.getLocatorString()).dropdown(header);
+        return container(ContainerEnum.CHECK_BALANCE.getContainerClass()).dropdown(header);
     }
 
     default  Dropdown getDropdownFromNavigationBar(String header){
@@ -21,7 +21,7 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
     }
 
     default AtlasWebElement getPersonalNumberInput(){
-        return container(ContainerEnum.CHECK_BALANCE.getLocatorString()).input(Input.PERSONAL_NUMBER.getLocatorString());
+        return container(ContainerEnum.CHECK_BALANCE.getContainerClass()).input(Input.PERSONAL_NUMBER.getId());
     }
 
     default void setInputPersonalNumber(String number){

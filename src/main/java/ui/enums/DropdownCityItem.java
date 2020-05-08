@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum DropdownCityItem implements BaseEnumDropDown {
+public enum DropdownCityItem{
     //Cities dropdown items
     BILOZIRYA("","Білозір", "https://mclaut.com/bilozirya/main"),
     VATUTINE("","Ватутіне", "https://mclaut.com/vatutino/main"),
@@ -40,13 +40,12 @@ public enum DropdownCityItem implements BaseEnumDropDown {
     }
 
 
-    @Override
-    public String getLocatorString(){ return text;}
+    public String getText(){ return text;}
 
-    @Override
+
     public String getUrl(){return url;}
 
-    @Override
+
     public String getHeader() {
         return header;
     }

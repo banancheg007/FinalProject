@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum DropDownHistoryItems implements BaseEnum{
+public enum DropDownHistoryItems{
     YEAR_2020("payments_year","2020"),
     YEAR_2019("payments_year","2019"),
     YEAR_2018("payments_year","2018"),
@@ -38,8 +38,8 @@ public enum DropDownHistoryItems implements BaseEnum{
         this.numericalEquivalent = numericalEquivalent;
     }
 
-    @Override
-    public String getLocatorString() {
+
+    public String getItemText() {
         return itemText;
     }
 

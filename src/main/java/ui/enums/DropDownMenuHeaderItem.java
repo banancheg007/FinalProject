@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum DropDownMenuHeaderItem implements BaseEnumDropDown {
+public enum DropDownMenuHeaderItem{
 
 
     //"Для Дому" dropdown items
@@ -45,15 +45,12 @@ public enum DropDownMenuHeaderItem implements BaseEnumDropDown {
         this.url = url;
     }
 
-    @Override
-    public String getLocatorString(){ return text;}
+    public String getText(){ return text;}
 
-    @Override
     public String getUrl() {
         return url;
     }
 
-    @Override
     public String getHeader() {
         return header;
     }

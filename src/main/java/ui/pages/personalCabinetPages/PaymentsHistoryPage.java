@@ -1,4 +1,4 @@
-package ui.pages;
+package ui.pages.personalCabinetPages;
 
 import io.qameta.atlas.webdriver.AtlasWebElement;
 import io.qameta.atlas.webdriver.ElementsCollection;
@@ -9,6 +9,7 @@ import ui.elements.WithButton;
 import ui.elements.WithPersonalCabinetMenu;
 import ui.enums.Button;
 import ui.enums.DropDownHistoryItems;
+import ui.pages.BasePage;
 import ui.utils.Utils;
 
 import java.text.ParseException;
@@ -39,12 +40,12 @@ public interface PaymentsHistoryPage extends BasePage, WithPersonalCabinetMenu, 
 
     default void showHistoryForPeriodAndType(DropDownHistoryItems year, DropDownHistoryItems month, DropDownHistoryItems type){
         dropdown(year.getHeaderId()).click();
-        button(year.getLocatorString()).click();
+        button(year.getItemText()).click();
         dropdown(month.getHeaderId()).click();
-        button(month.getLocatorString()).click();
+        button(month.getItemText()).click();
         dropdown(type.getHeaderId()).click();
-        button(type.getLocatorString()).click();
-        button(Button.SHOW.getLocatorString()).click();
+        button(type.getItemText()).click();
+        button(Button.SHOW.getText()).click();
     }
 
     default void compareMonthAndYearResults(int expectedMonth, int expectedYear) throws ParseException {

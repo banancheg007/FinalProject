@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum Label implements BaseEnum{
+public enum Label{
     LOGIN("Логін"),
     ORDER_DATE("Дата замовлення"),
     STATUS("Статус")
@@ -12,8 +12,7 @@ public enum Label implements BaseEnum{
     }
     String text;
 
-    @Override
-    public String getLocatorString() {
+    public String getText() {
         return text;
     }
 }

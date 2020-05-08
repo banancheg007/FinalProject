@@ -1,6 +1,6 @@
 package ui.enums;
 
-public enum FloatingActionButton implements BaseEnum{
+public enum FloatingActionButton{
     FACEBOOK_FAB("fa-facebook-f","https://www.facebook.com/McLaut.UA/?rc=p"),
     INSTAGRAM_FAB("fa-instagram","https://www.instagram.com/mclaut_ua/?hl=en"),
     TELEGRAM_FAB("fa-telegram-plane","https://t.me/McLaut_UA"),
@@ -15,8 +15,7 @@ public enum FloatingActionButton implements BaseEnum{
         this.url = url;
     }
 
-    @Override
-    public String getLocatorString() {
+    public String getFabClass() {
         return classFAB;
     }
 

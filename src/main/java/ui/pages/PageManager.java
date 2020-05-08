@@ -5,6 +5,7 @@ import io.qameta.atlas.webdriver.WebDriverConfiguration;
 import io.qameta.atlas.webdriver.WebPage;
 import org.openqa.selenium.WebDriver;
 import ui.initialDriver.AppManager;
+import ui.pages.personalCabinetPages.*;
 
 public class PageManager {
 
@@ -39,7 +40,19 @@ public class PageManager {
 
     public ServicesPage onServicesPage(){ return  onPage(ServicesPage.class);}
 
+    public AbonentPage onAbonentPage(){ return  onPage(AbonentPage.class);}
+
+    public PaymentPage onPaymentPage(){ return  onPage(PaymentPage.class);}
+
+    public NewsPage onNewsPage(){ return  onPage(NewsPage.class);}
+
+    public RequestsPage onRequestsPage(){ return  onPage(RequestsPage.class);}
+
+    public ActionsPage onActionsPage(){ return  onPage(ActionsPage.class);}
+
     public PaymentsHistoryPage onPaymentsHistoryPage(){ return  onPage(PaymentsHistoryPage.class);}
+
+    public PersonalCabinetPage onPersonalCabinetPage(){ return  onPage(PersonalCabinetPage.class);}
 
 
 }
