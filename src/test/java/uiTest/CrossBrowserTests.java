@@ -86,7 +86,6 @@ public class CrossBrowserTests extends BaseTest{
 
     @Test(description = "Displaying income for period")
     public void IncomeForPeriod(){
-        //setUp(browser);
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
         appManager.getPersonalPageHelper().goToPage(ContainerEnum.TO_PAGE_BALANCE.getContainerClass());

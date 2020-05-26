@@ -4,16 +4,13 @@ package ui.listeners;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
-import io.qameta.allure.TmsLink;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.*;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 import ui.initialDriver.InitialDriver;
-
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.Properties;
 
 public class Listener implements ITestListener{
 
@@ -35,8 +32,19 @@ public class Listener implements ITestListener{
     }
 
     @Override
-    public void onTestFailure(ITestResult arg0) {
+    public void onTestFailure(ITestResult result) {
         attachScreenshot();
+        String classError = result.getThrowable().getClass().getName();
+        switch (classError) {
+            case "com.consol.citrus.exceptions.TestCaseFailedException":
+                result.setStatus(ITestResult.FAILURE);
+                AssertionError errorCast = new AssertionError(
+                        result.getThrowable().getMessage(),
+                        result.getThrowable()
+                );
+                result.setThrowable(errorCast);
+                break;
+        }
         //new Screen().getScreen();
         InitialDriver.getInstance().destroy();
     }

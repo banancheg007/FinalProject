@@ -10,6 +10,7 @@ import ui.initialDriver.AppManager;
 import ui.pages.PageManager;
 
 import java.util.ArrayList;
+import java.util.function.Function;
 
 public class BaseHelper {
 
@@ -46,6 +47,7 @@ public class BaseHelper {
 
     @Step("Check equals current and expected urls")
     public BaseHelper checkEqualsUrlWithCurrent(String expectedUrl){
+        waitForLoadUrl(expectedUrl);
         Assert.assertEquals(getCurrentUrl(),expectedUrl);
         return this;
     }
@@ -55,9 +57,15 @@ public class BaseHelper {
         Assert.assertEquals(actualText,expectedString);
     }
 
-    public void waitForTextInElement(String expectedText,WebElement element){
+    public void waitForCustomConditions(Function expectedConditions, long timeOutInSeconds ){
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(),timeOutInSeconds);
+        webDriverWait.until(expectedConditions);
+        webDriverWait.until(ExpectedConditions.urlToBe("my-url"));
+    }
+
+    public void waitForLoadUrl(String url ){
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(),3);
-        webDriverWait.until(ExpectedConditions.textToBePresentInElement(element,expectedText));
+        webDriverWait.until(ExpectedConditions.urlToBe(url));
     }
 
 

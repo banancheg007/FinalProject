@@ -3,9 +3,6 @@ package ui.utils;
 import org.testng.annotations.DataProvider;
 import ui.enums.*;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 public class TestDataProviders {
 
     @DataProvider(name = "getCitiesFromHeader",parallel = false)
@@ -155,7 +152,7 @@ public class TestDataProviders {
 
 
 
-    public static <T extends Enum<T>> Object[][] getDataFromEnums(Class<T> aEnum) {
+   /* public static <T extends Enum<T>> Object[][] getDataFromEnums(Class<T> aEnum) {
         //System.out.println(Arrays.asList(aEnum.getEnumConstants()));
         Object[] array = aEnum.getEnumConstants();
         Object[][]array2 = new Object[aEnum.getEnumConstants().length][3];
@@ -213,7 +210,7 @@ public class TestDataProviders {
         }
         return array2;
 
-    }
+    }*/
 
 
 }
