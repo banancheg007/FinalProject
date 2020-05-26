@@ -3,7 +3,7 @@
     <listeners>
         <listener class-name="ui.listeners.Listener"/>
     </listeners>
-    <!--<test name="ChromeTestCases">
+    <test name="ChromeTestCases">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="uiTest.CrossBrowserTests"/>
@@ -14,12 +14,6 @@
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="uiTest.CrossBrowserTests"/>
-            <class name="uiTest.DataProviderTests"/>
-        </classes>
-    </test>-->
-    <test name="EdgeTestCases">
-        <parameter name="browser" value="firefox"/>
-        <classes>
             <class name="uiTest.DataProviderTests"/>
         </classes>
     </test>
