@@ -34,18 +34,6 @@ public class Listener implements ITestListener{
     @Override
     public void onTestFailure(ITestResult result) {
         attachScreenshot();
-        String classError = result.getThrowable().getClass().getName();
-        switch (classError) {
-            case "com.consol.citrus.exceptions.TestCaseFailedException":
-                result.setStatus(ITestResult.FAILURE);
-                AssertionError errorCast = new AssertionError(
-                        result.getThrowable().getMessage(),
-                        result.getThrowable()
-                );
-                result.setThrowable(errorCast);
-                break;
-        }
-        //new Screen().getScreen();
         InitialDriver.getInstance().destroy();
     }
 
