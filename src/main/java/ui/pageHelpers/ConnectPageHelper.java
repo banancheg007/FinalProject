@@ -1,11 +1,11 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
-import ui.enums.Button;
-import ui.enums.ContainerEnum;
-import ui.enums.Input;
-import ui.initialDriver.AppManager;
-import ui.pages.PageManager;
+import utils.enums.Button;
+import utils.enums.ContainerEnum;
+import utils.enums.Input;
+import ui.AppManager;
+import ui.PageManager;
 
 public class ConnectPageHelper extends BaseHelper {
 

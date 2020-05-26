@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import ui.initialDriver.AppManager;
-import ui.pages.PageManager;
+import ui.AppManager;
+import ui.PageManager;
 
 import java.util.ArrayList;
 import java.util.function.Function;
@@ -42,7 +42,6 @@ public class BaseHelper {
     public void switchTab(){
         ArrayList<String> tabs2 = new ArrayList<>(getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs2.get(1));
-        System.out.println(tabs2.size());
     }
 
     @Step("Check equals current and expected urls")
@@ -60,7 +59,6 @@ public class BaseHelper {
     public void waitForCustomConditions(Function expectedConditions, long timeOutInSeconds ){
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(),timeOutInSeconds);
         webDriverWait.until(expectedConditions);
-        webDriverWait.until(ExpectedConditions.urlToBe("my-url"));
     }
 
     public void waitForLoadUrl(String url ){

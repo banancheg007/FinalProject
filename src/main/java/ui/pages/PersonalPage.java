@@ -2,8 +2,8 @@ package ui.pages;
 
 import ui.elements.WithButton;
 import ui.elements.WithContainer;
-import ui.enums.Button;
-import ui.enums.ContainerEnum;
+import utils.enums.Button;
+import utils.enums.ContainerEnum;
 
 public interface PersonalPage extends BasePage, WithButton, WithContainer {
 

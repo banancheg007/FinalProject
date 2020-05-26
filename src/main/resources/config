@@ -1,8 +1,0 @@
-{
-  "browser.driver" : "CHROME",
-  "element.wait" :30,
-  "element.poling" :500,
-  "element.exist" :2,
-  "parallel.tests":true,
-  "parallel.suite":false
-}

@@ -1,7 +1,7 @@
 package ui.pageHelpers;
 
-import ui.initialDriver.AppManager;
-import ui.pages.PageManager;
+import ui.AppManager;
+import ui.PageManager;
 
 public class PaymentsPageHelper extends BaseHelper{
     public PaymentsPageHelper(AppManager appManager, PageManager pageManager) {

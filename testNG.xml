@@ -1,20 +1,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Final project" parallel="none">
     <listeners>
-        <listener class-name="ui.listeners.Listener"/>
+        <listener class-name="core.listeners.Listener"/>
     </listeners>
     <test name="ChromeTestCases">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="uiTest.CrossBrowserTests"/>
-            <class name="uiTest.DataProviderTests"/>
+            <class name="tests.CrossBrowserTests"/>
+            <class name="tests.DataProviderTests"/>
         </classes>
     </test>
     <test name="FirefoxTestCases">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="uiTest.CrossBrowserTests"/>
-            <class name="uiTest.DataProviderTests"/>
+            <class name="tests.CrossBrowserTests"/>
+            <class name="tests.DataProviderTests"/>
         </classes>
     </test>
 

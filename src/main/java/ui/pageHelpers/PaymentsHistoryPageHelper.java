@@ -1,9 +1,9 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
-import ui.enums.DropDownHistoryItems;
-import ui.initialDriver.AppManager;
-import ui.pages.PageManager;
+import utils.enums.DropDownHistoryItems;
+import ui.AppManager;
+import ui.PageManager;
 
 import java.text.ParseException;
 
@@ -27,7 +27,7 @@ public class PaymentsHistoryPageHelper extends BaseHelper{
     }
 
     @Step("Compare month and year from results")
-    public PaymentsHistoryPageHelper compareMonthAndYearResults(int expectedMonth, int expectedYear) throws ParseException {
+    public PaymentsHistoryPageHelper compareMonthAndYearResults(int expectedMonth, int expectedYear){
         pageManager.onPaymentsHistoryPage().compareMonthAndYearResults(expectedMonth,expectedYear);
         return this;
     }

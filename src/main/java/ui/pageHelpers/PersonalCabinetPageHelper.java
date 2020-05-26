@@ -1,8 +1,8 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
-import ui.initialDriver.AppManager;
-import ui.pages.PageManager;
+import ui.AppManager;
+import ui.PageManager;
 
 public class PersonalCabinetPageHelper extends BaseHelper{
 

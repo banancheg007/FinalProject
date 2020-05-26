@@ -1,9 +1,9 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
-import ui.enums.Label;
-import ui.initialDriver.AppManager;
-import ui.pages.PageManager;
+import utils.enums.Label;
+import ui.AppManager;
+import ui.PageManager;
 
 public class InternetPageHelper extends PersonalCabinetPageHelper {
 

@@ -7,10 +7,10 @@ import io.qameta.atlas.webdriver.extension.Param;
 import org.testng.Assert;
 import ui.elements.WithButton;
 import ui.elements.WithPersonalCabinetMenu;
-import ui.enums.Button;
-import ui.enums.DropDownHistoryItems;
+import utils.enums.Button;
+import utils.enums.DropDownHistoryItems;
 import ui.pages.BasePage;
-import ui.utils.Utils;
+import utils.Constants;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -48,10 +48,14 @@ public interface PaymentsHistoryPage extends BasePage, WithPersonalCabinetMenu, 
         button(Button.SHOW.getText()).click();
     }
 
-    default void compareMonthAndYearResults(int expectedMonth, int expectedYear) throws ParseException {
+    default void compareMonthAndYearResults(int expectedMonth, int expectedYear){
         for (AtlasWebElement element:dateColumns()){
             Calendar calendar = Calendar.getInstance();
-            calendar.setTime(new SimpleDateFormat("dd.MM.yy").parse(element.getText()));
+            try {
+                calendar.setTime(new SimpleDateFormat("dd.MM.yy").parse(element.getText()));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             Assert.assertEquals(expectedMonth,calendar.get(Calendar.MONTH));
             Assert.assertEquals(expectedYear,calendar.get(Calendar.YEAR));
         }
@@ -59,13 +63,13 @@ public interface PaymentsHistoryPage extends BasePage, WithPersonalCabinetMenu, 
 
     default void compareWriteOffsReason(){
         for (AtlasWebElement element:reasonColumns()){
-            Assert.assertTrue(element.getText().contains(Utils.INTERNET) || element.getText().contains(Utils.IPTV));
+            Assert.assertTrue(element.getText().contains(Constants.INTERNET) || element.getText().contains(Constants.IPTV));
         }
     }
 
     default void compareIncomeReason(){
         for (AtlasWebElement element:reasonColumns()){
-            Assert.assertTrue(element.getText().contains(Utils.PAYMENT) || element.getText().contains(Utils.ADDITION));
+            Assert.assertTrue(element.getText().contains(Constants.PAYMENT) || element.getText().contains(Constants.ADDITION));
         }
     }
 

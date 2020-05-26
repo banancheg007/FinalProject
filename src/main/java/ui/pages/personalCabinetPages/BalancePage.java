@@ -1,7 +1,7 @@
 package ui.pages.personalCabinetPages;
 
-import ui.enums.Button;
-import ui.enums.ContainerEnum;
+import utils.enums.Button;
+import utils.enums.ContainerEnum;
 
 public interface BalancePage extends PersonalCabinetPage{
 

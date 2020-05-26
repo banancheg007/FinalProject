@@ -2,10 +2,10 @@ package ui.pageHelpers;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import ui.enums.ContainerEnum;
-import ui.enums.Input;
-import ui.initialDriver.AppManager;
-import ui.pages.PageManager;
+import utils.enums.ContainerEnum;
+import utils.enums.Input;
+import ui.AppManager;
+import ui.PageManager;
 
 
 public class LoginPageHelper extends BaseHelper{
@@ -30,7 +30,6 @@ public class LoginPageHelper extends BaseHelper{
 
     @Step("Compare expected string with text after choose city for login")
     public LoginPageHelper compareTextAfterLoginWithWrongData(String expectedString){
-        //pageManager.onLoginPage().container(ContainerEnum.AUTH.getLocatorString()).waitUntil(anyOf(displayed(),text(Utils.NEED_TO_CHOOSE_A_CITY)));
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(),3);
         webDriverWait.until(ExpectedConditions.textToBePresentInElement(pageManager.onLoginPage().container(ContainerEnum.AUTH.getContainerClass()),expectedString));
         compareString(expectedString,pageManager.onLoginPage().container(ContainerEnum.AUTH.getContainerClass()).getText());
