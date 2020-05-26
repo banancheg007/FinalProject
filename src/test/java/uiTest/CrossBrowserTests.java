@@ -83,7 +83,7 @@ public class CrossBrowserTests extends BaseTest{
         appManager.getPaymentsHistoryPageHelper().showHistoryForPeriodAndType(DropDownHistoryItems.YEAR_2018,DropDownHistoryItems.SEPTEMBER, DropDownHistoryItems.WRITE_OFFS).waitForLoadData().compareWriteOffsReason();
     }
 
-    @Parameters("browser")
+    
     @Test(description = "Displaying income for period")
     public void IncomeForPeriod(String browser){
         setUp(browser);
