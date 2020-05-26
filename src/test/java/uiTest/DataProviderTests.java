@@ -32,11 +32,6 @@ public class DataProviderTests extends BaseTest{
         appManager = new AppManager();
         appManager.getMainPageHelper().openMainPage().changeCityInHeader(header,city).checkEqualsUrlWithCurrent(url);
     }
-    @Test(description = "Change cities in check balance tab", dataProvider = "getCitiesWithoutUrls", dataProviderClass = TestDataProviders.class)
-    public void ChangeCitiesInCheckBalanceTab(String header,String city){
-        appManager = new AppManager();
-        appManager.getMainPageHelper().openMainPage().changeCityForCheckBalance(header,city);
-    }
     @Test(description = "Check references after select dropdown menu items", dataProvider = "getMenuItems", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterSelectDropdownMenuItems(String header,String menuItem, String url){
         appManager = new AppManager();
@@ -72,5 +67,9 @@ public class DataProviderTests extends BaseTest{
 
     }
 
-
+    /* @Test(description = "Change cities in check balance tab", dataProvider = "getCitiesWithoutUrls", dataProviderClass = TestDataProviders.class)
+    public void ChangeCitiesInCheckBalanceTab(String header,String city){
+        appManager = new AppManager();
+        appManager.getMainPageHelper().openMainPage().changeCityForCheckBalance(header,city);
+    }*/
 }

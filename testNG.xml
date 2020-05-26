@@ -6,16 +6,19 @@
     <test name="ChromeTestCases">
         <parameter name="browser" value="chrome"/>
         <classes>
+            <class name="uiTest.CrossBrowserTests"/>
         </classes>
     </test>
     <test name="FirefoxTestCases">
         <parameter name="browser" value="firefox"/>
         <classes>
+            <class name="uiTest.CrossBrowserTests"/>
         </classes>
     </test>
     <test name="EdgeTestCases">
         <parameter name="browser" value="edge"/>
         <classes>
+            <class name="uiTest.CrossBrowserTests"/>
         </classes>
     </test>
     <test name="Regression">
