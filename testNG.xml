@@ -18,7 +18,7 @@
         </classes>
     </test>-->
     <test name="EdgeTestCases">
-        <parameter name="browser" value="firefox"/>
+        <parameter name="browser" value="edge"/>
         <classes>
             <class name="uiTest.DataProviderTests"/>
         </classes>
