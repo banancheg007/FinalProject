@@ -83,10 +83,10 @@ public class CrossBrowserTests extends BaseTest{
         appManager.getPaymentsHistoryPageHelper().showHistoryForPeriodAndType(DropDownHistoryItems.YEAR_2018,DropDownHistoryItems.SEPTEMBER, DropDownHistoryItems.WRITE_OFFS).waitForLoadData().compareWriteOffsReason();
     }
 
-    
+
     @Test(description = "Displaying income for period")
-    public void IncomeForPeriod(String browser){
-        setUp(browser);
+    public void IncomeForPeriod(){
+        //setUp(browser);
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
         appManager.getLoginPageHelper().signIn(Utils.CHERKASY,Utils.LOGIN, Utils.PASSWORD);
         appManager.getPersonalPageHelper().goToPage(ContainerEnum.TO_PAGE_BALANCE.getContainerClass());
