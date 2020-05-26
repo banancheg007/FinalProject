@@ -62,6 +62,7 @@ public class InitialDriver extends Options {
                 case "firefox": {
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver(firefoxOptions());
+                    driver.manage().window().maximize();
                     break;
                 }
                 case "edge": {
