@@ -28,7 +28,7 @@ abstract class Options {
     FirefoxOptions firefoxOptions() {
         FirefoxOptions options = new FirefoxOptions();
        // options.addArguments("start-maximized");
-        options.addArguments("--disable-infobars");
+       // options.addArguments("--disable-infobars");
         return options;
     }
 
