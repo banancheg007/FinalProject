@@ -71,11 +71,11 @@ public class InitialDriver extends Options {
                     break;
                 }
 
-                default: {
+               /* default: {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(chromeOptionsForJenkins());
                     break;
-                }
+                }*/
             }
         }else{
             WebDriverManager.chromedriver().setup();
