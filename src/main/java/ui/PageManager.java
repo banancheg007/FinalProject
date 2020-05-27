@@ -13,7 +13,6 @@ public class PageManager {
 
     public PageManager(AppManager appManager){
         this.appManager = appManager;
-        System.out.println("PageManager create");
     }
 
     protected <T extends WebPage> T onPage(Class<T> page) {

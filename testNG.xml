@@ -1,7 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Final project" parallel="none">
+<suite name="Final project">
     <listeners>
         <listener class-name="core.listeners.Listener"/>
+        <listener class-name="core.listeners.RetryListener"/>
     </listeners>
     <test name="ChromeTestCases">
         <parameter name="browser" value="chrome"/>

@@ -8,9 +8,7 @@ import utils.Constants;
 public class MainPageHelper extends BaseHelper {
 
     public MainPageHelper(AppManager appManager, PageManager pageManager){
-
         super(appManager, pageManager);
-        System.out.println("MainPageHelper create");
     }
 
 

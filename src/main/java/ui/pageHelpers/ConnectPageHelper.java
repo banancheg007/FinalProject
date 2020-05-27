@@ -7,6 +7,8 @@ import utils.enums.Input;
 import ui.AppManager;
 import ui.PageManager;
 
+import static ru.yandex.qatools.htmlelements.matchers.WebElementMatchers.isDisplayed;
+
 public class ConnectPageHelper extends BaseHelper {
 
     public ConnectPageHelper(AppManager appManager, PageManager pageManager) {
@@ -26,6 +28,7 @@ public class ConnectPageHelper extends BaseHelper {
 
     @Step("Порівняти очікуваний і поточний текст помилки після відправки заяви на підключення")
     public ConnectPageHelper compareTextAfterSendRequestForConnectWithWrongData(String expectedString){
+        pageManager.onConnectPage().container(ContainerEnum.CONNECT_REQUEST.getContainerClass()).paragraph().should(isDisplayed());
         compareString(expectedString,pageManager.onConnectPage().container(ContainerEnum.CONNECT_REQUEST.getContainerClass()).paragraph().getText());
         return this;
     }

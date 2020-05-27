@@ -9,6 +9,8 @@ import utils.enums.DropDownHistoryItems;
 public class CrossBrowserTests extends BaseTest{
 
 
+
+
     @Test(description = "Відправка запиту на підключення з некоректним телефоном")
     public void CheckSendingConnectRequestWithWrongTelephone(){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.CONNECT.getText());

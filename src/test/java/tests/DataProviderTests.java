@@ -1,9 +1,7 @@
 package tests;
 
 
-import core.listeners.Listener;
 import io.qameta.allure.Feature;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.Constants;
 import utils.TestDataProviders;
@@ -13,7 +11,7 @@ import utils.enums.ContainerEnum;
 
 //@Epic("Main page")
 @Feature("Smoke tests")
-@Listeners({Listener.class})
+
 public class DataProviderTests extends BaseTest{
 
     @Test(description = "Перевірка URL після зміни міста в шапці", dataProvider = "getCitiesFromHeader", dataProviderClass = TestDataProviders.class)
