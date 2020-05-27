@@ -7,15 +7,15 @@
     <test name="ChromeTestCases">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tests.CrossBrowserTests"/>
-            <class name="tests.DataProviderTests"/>
+            <class name="tests.DisplayHistoryTests"/>
+            <class name="tests.UrlTests"/>
         </classes>
     </test>
     <test name="FirefoxTestCases">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="tests.CrossBrowserTests"/>
-            <class name="tests.DataProviderTests"/>
+            <class name="tests.DisplayHistoryTests"/>
+            <class name="tests.UrlTests"/>
         </classes>
     </test>
 

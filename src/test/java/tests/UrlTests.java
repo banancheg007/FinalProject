@@ -12,7 +12,7 @@ import utils.enums.ContainerEnum;
 //@Epic("Main page")
 @Feature("Smoke tests")
 
-public class DataProviderTests extends BaseTest{
+public class UrlTests extends BaseTest{
 
     @Test(description = "Перевірка URL після зміни міста в шапці", dataProvider = "getCitiesFromHeader", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterChangeCitiesInHeader(String header,String city, String url){
@@ -42,7 +42,7 @@ public class DataProviderTests extends BaseTest{
         appManager.getPersonalPageHelper().goToPage(container).checkEqualsUrlWithCurrent(url);
     }
 
-    @Test(description = "Перевірка URL після переходу на наступну сторінку з персонального меню", dataProvider = "getButtonsFromPesonalCabinetMenu", dataProviderClass = TestDataProviders.class)
+    @Test(description = "Перевірка URL після переходу на наступну сторінку з персонального меню", dataProvider = "getButtonsFromPersonalCabinetMenu", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterNavigateToPagesFromMenuOnPersonalPage(String personalPageMenuButtonText, String url){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
         appManager.getLoginPageHelper().signIn(Constants.CHERKASY,Constants.LOGIN, Constants.PASSWORD);

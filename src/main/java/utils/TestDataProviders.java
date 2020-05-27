@@ -92,9 +92,17 @@ public class TestDataProviders {
         };
     }
 
+    @DataProvider(name = "getUserData")
+    public static Object[][] getUserData(){
+        return new Object[][]{
+                {Constants.SURNAME,Constants.NAME,Constants.WRONG_TELEPHONE,Constants.ADDRESS,Constants.MESSAGE,Constants.TYPE_CORRECT_PHONE},
+                {Constants.SURNAME,Constants.NAME,Constants.CORRECT_TELEPHONE,Constants.ADDRESS,Constants.MESSAGE,Constants.CHOOSE_CITY}
+        };
+    }
 
-    @DataProvider(name = "getButtonsFromPesonalCabinetMenu")
-    public static Object[][] getButtonsFromPesonalCabinet(){
+
+    @DataProvider(name = "getButtonsFromPersonalCabinetMenu")
+    public static Object[][] getButtonsFromPersonalCabinet(){
         return new Object[][]{
                 {Button.TO_ABONENT_PAGE_BUTTON.getText(),Button.TO_ABONENT_PAGE_BUTTON.getUrl()},
                 {Button.TO_INTERNET_PAGE_BUTTON_.getText(),Button.TO_INTERNET_PAGE_BUTTON_.getUrl()},
