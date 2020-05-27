@@ -14,31 +14,30 @@ public class MainPageHelper extends BaseHelper {
     }
 
 
-    @Step("Open main page")
+    @Step("Відкрити головноу сторінку")
     public MainPageHelper openMainPage(){
         openUrl(Constants.URL);
         return this;
     }
-
-    @Step("Change city in header")
+    @Step("Змінити місто в шапці")
     public MainPageHelper changeCityInHeader(String header, String city){
         pageManager.onMainPage().changeCityInHeader(header, city);
         return this;
     }
 
-    @Step("Click on button in header")
+    @Step("Натиснути кнопку в шапці")
     public MainPageHelper clickOnButtonInHeader(String button){
         pageManager.onMainPage().clickOnButtonInHeader(button);
         return this;
     }
 
-    @Step("Select menu item")
+    @Step("Вибрати пункт меню")
     public MainPageHelper selectDropdownItem(String header, String menuItem){
         pageManager.onMainPage().changeDropdownItemInNavigationBar(header,menuItem);
         return this;
     }
 
-    @Step("Click on fab")
+    @Step("Натиснути плаваючу кнопку")
     public MainPageHelper clickOnFab(String fab){
         pageManager.onMainPage().clickOnFab(fab);
         switchTab();

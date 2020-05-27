@@ -10,7 +10,7 @@ public class PersonalCabinetPageHelper extends BaseHelper{
         super(appManager, pageManager);
     }
 
-    @Step("Go to page from personal page menu")
+    @Step("Перейти на сторінку із персонального меню")
     public PersonalCabinetPageHelper goToPage(String personalCabinetMenuButton){
         pageManager.onPersonalCabinetPage().goToPage(personalCabinetMenuButton);
         return this;

@@ -5,12 +5,13 @@ import utils.enums.*;
 
 public class TestDataProviders {
 
-    @DataProvider(name = "getCitiesFromHeader",parallel = false)
+    @DataProvider(name = "getCitiesFromHeader")
     public static Object[][] getCitiesFromHeader() {
         return new Object[][]{
                 {DropdownCityItem.BILOZIRYA.getHeader(),DropdownCityItem.BILOZIRYA.getText(),DropdownCityItem.BILOZIRYA.getUrl()},
                 {DropdownCityItem.VATUTINE.getHeader(),DropdownCityItem.VATUTINE.getText(),DropdownCityItem.VATUTINE.getUrl()},
                 {DropdownCityItem.VOZNESENSKE.getHeader(),DropdownCityItem.VOZNESENSKE.getText(),DropdownCityItem.VOZNESENSKE.getUrl()},
+                {DropdownCityItem.GELMYAZOV.getHeader(),DropdownCityItem.GELMYAZOV.getText(),DropdownCityItem.GELMYAZOV.getUrl()},
                 {DropdownCityItem.GERONIMOVKA.getHeader(),DropdownCityItem.GERONIMOVKA.getText(),DropdownCityItem.GERONIMOVKA.getUrl()},
                 {DropdownCityItem.DUBIYIVKA.getHeader(),DropdownCityItem.DUBIYIVKA.getText(),DropdownCityItem.DUBIYIVKA.getUrl()},
                 {DropdownCityItem.ZVENIGORODKA.getHeader(),DropdownCityItem.ZVENIGORODKA.getText(),DropdownCityItem.ZVENIGORODKA.getUrl()},
@@ -20,13 +21,17 @@ public class TestDataProviders {
                 {DropdownCityItem.LESKI.getHeader(),DropdownCityItem.LESKI.getText(),DropdownCityItem.LESKI.getUrl()},
                 {DropdownCityItem.MOSHNI.getHeader(),DropdownCityItem.MOSHNI.getText(),DropdownCityItem.MOSHNI.getUrl()},
                 {DropdownCityItem.NOVA_DMITRIVKA.getHeader(),DropdownCityItem.NOVA_DMITRIVKA.getText(),DropdownCityItem.NOVA_DMITRIVKA.getUrl()},
+                {DropdownCityItem.ORLOVETS.getHeader(),DropdownCityItem.ORLOVETS.getText(),DropdownCityItem.ORLOVETS.getUrl()},
                 {DropdownCityItem.PEREIASLAV.getHeader(),DropdownCityItem.PEREIASLAV.getText(),DropdownCityItem.PEREIASLAV.getUrl()},
                 {DropdownCityItem.RUSKA_POLYANA.getHeader(),DropdownCityItem.RUSKA_POLYANA.getText(),DropdownCityItem.RUSKA_POLYANA.getUrl()},
                 {DropdownCityItem.SAGUNIVKA.getHeader(),DropdownCityItem.SAGUNIVKA.getText(),DropdownCityItem.SAGUNIVKA.getUrl()},
                 {DropdownCityItem.SVIDIVOK.getHeader(),DropdownCityItem.SVIDIVOK.getText(),DropdownCityItem.SVIDIVOK.getUrl()},
                 {DropdownCityItem.SMILA.getHeader(),DropdownCityItem.SMILA.getText(),DropdownCityItem.SMILA.getUrl()},
+                {DropdownCityItem.SOKIRNA.getHeader(),DropdownCityItem.SOKIRNA.getText(),DropdownCityItem.SOKIRNA.getUrl()},
+                {DropdownCityItem.SOFIIVKA.getHeader(),DropdownCityItem.SOFIIVKA.getText(),DropdownCityItem.SOFIIVKA.getUrl()},
                 {DropdownCityItem.STEBNE.getHeader(),DropdownCityItem.STEBNE.getText(),DropdownCityItem.STEBNE.getUrl()},
                 {DropdownCityItem.STETSIVKA.getHeader(),DropdownCityItem.STETSIVKA.getText(),DropdownCityItem.STETSIVKA.getUrl()},
+                {DropdownCityItem.TEKLUNO.getHeader(),DropdownCityItem.TEKLUNO.getText(),DropdownCityItem.TEKLUNO.getUrl()},
                 {DropdownCityItem.HUDYAKI.getHeader(),DropdownCityItem.HUDYAKI.getText(),DropdownCityItem.HUDYAKI.getUrl()},
                 {DropdownCityItem.HUTORY.getHeader(),DropdownCityItem.HUTORY.getText(),DropdownCityItem.HUTORY.getUrl()},
                 {DropdownCityItem.CHERVONA_SLOBODA.getHeader(),DropdownCityItem.CHERVONA_SLOBODA.getText(),DropdownCityItem.CHERVONA_SLOBODA.getUrl()},
@@ -37,40 +42,8 @@ public class TestDataProviders {
 
     }
 
-    @DataProvider(name = "getCitiesWithoutUrls",parallel = false)
-    public static Object[][] getCitiesWithoutUrls() {
-        return new Object[][]{
-                {DropdownCityItem.BILOZIRYA.getHeader(),DropdownCityItem.BILOZIRYA.getText()},
-                {DropdownCityItem.VATUTINE.getHeader(),DropdownCityItem.VATUTINE.getText()},
-                {DropdownCityItem.VOZNESENSKE.getHeader(),DropdownCityItem.VOZNESENSKE.getText()},
-                {DropdownCityItem.GERONIMOVKA.getHeader(),DropdownCityItem.GERONIMOVKA.getText()},
-                {DropdownCityItem.DUBIYIVKA.getHeader(),DropdownCityItem.DUBIYIVKA.getText()},
-                {DropdownCityItem.ZVENIGORODKA.getHeader(),DropdownCityItem.ZVENIGORODKA.getText()},
-                {DropdownCityItem.ZGAR.getHeader(),DropdownCityItem.ZGAR.getText()},
-                {DropdownCityItem.ZOLOTONOSHA.getHeader(),DropdownCityItem.ZOLOTONOSHA.getText()},
-                {DropdownCityItem.KANIV.getHeader(),DropdownCityItem.KANIV.getText()},
-                {DropdownCityItem.LESKI.getHeader(),DropdownCityItem.LESKI.getText()},
-                {DropdownCityItem.MOSHNI.getHeader(),DropdownCityItem.MOSHNI.getText()},
-                {DropdownCityItem.NOVA_DMITRIVKA.getHeader(),DropdownCityItem.NOVA_DMITRIVKA.getText()},
-                {DropdownCityItem.PEREIASLAV.getHeader(),DropdownCityItem.PEREIASLAV.getText()},
-                {DropdownCityItem.RUSKA_POLYANA.getHeader(),DropdownCityItem.RUSKA_POLYANA.getText()},
-                {DropdownCityItem.SAGUNIVKA.getHeader(),DropdownCityItem.SAGUNIVKA.getText()},
-                {DropdownCityItem.SVIDIVOK.getHeader(),DropdownCityItem.SVIDIVOK.getText()},
-                {DropdownCityItem.SMILA.getHeader(),DropdownCityItem.SMILA.getText()},
-                {DropdownCityItem.STEBNE.getHeader(),DropdownCityItem.STEBNE.getText()},
-                {DropdownCityItem.STETSIVKA.getHeader(),DropdownCityItem.STETSIVKA.getText()},
-                {DropdownCityItem.HUDYAKI.getHeader(),DropdownCityItem.HUDYAKI.getText()},
-                {DropdownCityItem.HUTORY.getHeader(),DropdownCityItem.HUTORY.getText()},
-                {DropdownCityItem.CHERVONA_SLOBODA.getHeader(),DropdownCityItem.CHERVONA_SLOBODA.getText()},
-                {DropdownCityItem.CHORNOBAY.getHeader(),DropdownCityItem.CHORNOBAY.getText()},
-                {DropdownCityItem.SHPOLA.getHeader(),DropdownCityItem.SHPOLA.getText()},
-                {DropdownCityItem.YURKIVKA.getHeader(),DropdownCityItem.YURKIVKA.getText()}
-        };
 
-    }
-
-
-    @DataProvider(name = "getMenuItems",parallel = false)
+    @DataProvider(name = "getMenuItems")
     public static Object[][] getMenuItems() {
        // return getDataFromEnums(DropDownMenuHeaderItem.class);
 
@@ -90,6 +63,7 @@ public class TestDataProviders {
                 {DropDownMenuHeaderItem.INTERCOMS.getHeader(),DropDownMenuHeaderItem.INTERCOMS.getText(),DropDownMenuHeaderItem.INTERCOMS.getUrl()},
                 {DropDownMenuHeaderItem.COMMON_QUESTIONS.getHeader(),DropDownMenuHeaderItem.COMMON_QUESTIONS.getText(),DropDownMenuHeaderItem.COMMON_QUESTIONS.getUrl()},
                 {DropDownMenuHeaderItem.FEEDBACK.getHeader(),DropDownMenuHeaderItem.FEEDBACK.getText(),DropDownMenuHeaderItem.FEEDBACK.getUrl()},
+                {DropDownMenuHeaderItem.ONLINE_HELP.getHeader(),DropDownMenuHeaderItem.ONLINE_HELP.getText(),DropDownMenuHeaderItem.ONLINE_HELP.getUrl()},
                 {DropDownMenuHeaderItem.ABOUT_COMPANY.getHeader(),DropDownMenuHeaderItem.ABOUT_COMPANY.getText(),DropDownMenuHeaderItem.ABOUT_COMPANY.getUrl()},
                 {DropDownMenuHeaderItem.CONTACTS.getHeader(),DropDownMenuHeaderItem.CONTACTS.getText(),DropDownMenuHeaderItem.CONTACTS.getUrl()},
                 {DropDownMenuHeaderItem.CITY_CAMERAS.getHeader(),DropDownMenuHeaderItem.CITY_CAMERAS.getText(),DropDownMenuHeaderItem.CITY_CAMERAS.getUrl()},
@@ -97,7 +71,7 @@ public class TestDataProviders {
         };
     }
 
-    @DataProvider(name = "getFabs",parallel = false)
+    @DataProvider(name = "getFabs")
     public static Object[][] getFabs(){
         //return getDataFromEnums2(FloatingActionButton.class);
         return new Object[][]{
@@ -109,7 +83,7 @@ public class TestDataProviders {
         };
     }
 
-    @DataProvider(name = "getHeaderButtons",parallel = false)
+    @DataProvider(name = "getHeaderButtons")
     public static Object[][] getHeaderButtons(){
         return new Object[][]{
                 {Button.CONNECT.getText(),Button.CONNECT.getUrl()},
@@ -119,7 +93,7 @@ public class TestDataProviders {
     }
 
 
-    @DataProvider(name = "getButtonsFromPesonalCabinetMenu",parallel = false)
+    @DataProvider(name = "getButtonsFromPesonalCabinetMenu")
     public static Object[][] getButtonsFromPesonalCabinet(){
         return new Object[][]{
                 {Button.TO_ABONENT_PAGE_BUTTON.getText(),Button.TO_ABONENT_PAGE_BUTTON.getUrl()},
@@ -134,7 +108,7 @@ public class TestDataProviders {
     }
 
 
-    @DataProvider(name = "getNavigateContainersToPage",parallel = false)
+    @DataProvider(name = "getNavigateContainersToPage")
     public static Object[][] getNavigateContainersToPage(){
         return new Object[][]{
                 {ContainerEnum.TO_PAGE_ABONENT.getContainerClass(),ContainerEnum.TO_PAGE_ABONENT.getUrl()},

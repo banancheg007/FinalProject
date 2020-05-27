@@ -27,6 +27,7 @@ public enum DropDownMenuHeaderItem{
     //"Питання" dropdown items
     COMMON_QUESTIONS("Питання","Поширенні питання","https://mclaut.com/cherkassy/faq"),
     FEEDBACK("Питання","Зворотній зв","https://mclaut.com/cherkassy/request"),
+    ONLINE_HELP("Питання","Онлайн Допомога","https://mclaut.com/cherkassy/help"),
 
     //"Про Компанію" dropdown items
     ABOUT_COMPANY("Про Компанію","Про компанію","https://mclaut.com/cherkassy/about#company"),

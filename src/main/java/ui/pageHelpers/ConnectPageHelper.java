@@ -13,7 +13,7 @@ public class ConnectPageHelper extends BaseHelper {
         super(appManager, pageManager);
     }
 
-    @Step("Fill connect request form without city and send connect request")
+    @Step("Заповнити заявку на підключення (без міста)")
     public ConnectPageHelper fillConnectFormAndSendRequest(String surname, String name, String phone, String address, String message){
         pageManager.onConnectPage().input(Input.SURNAME.getId()).sendKeys(surname);
         pageManager.onConnectPage().input(Input.NAME.getId()).sendKeys(name);
@@ -24,7 +24,7 @@ public class ConnectPageHelper extends BaseHelper {
         return this;
     }
 
-    @Step("Compare expected string with text after send request for connecting")
+    @Step("Порівняти очікуваний і поточний текст помилки після відправки заяви на підключення")
     public ConnectPageHelper compareTextAfterSendRequestForConnectWithWrongData(String expectedString){
         compareString(expectedString,pageManager.onConnectPage().container(ContainerEnum.CONNECT_REQUEST.getContainerClass()).paragraph().getText());
         return this;

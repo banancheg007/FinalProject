@@ -15,7 +15,7 @@ public class LoginPageHelper extends BaseHelper{
     }
 
 
-    @Step("Sign in")
+    @Step("Авторизуватись")
     public LoginPageHelper signIn(String city, String login, String password){
         pageManager.onLoginPage().container(ContainerEnum.AUTH_CITY_DROPDOWN.getContainerClass()).click();
         pageManager.onLoginPage().cityDropdownItem(city).click();
@@ -28,7 +28,7 @@ public class LoginPageHelper extends BaseHelper{
 
 
 
-    @Step("Compare expected string with text after choose city for login")
+    @Step("Порівняти поточний тексту помилки з очікуваним повідомленням")
     public LoginPageHelper compareTextAfterLoginWithWrongData(String expectedString){
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(),3);
         webDriverWait.until(ExpectedConditions.textToBePresentInElement(pageManager.onLoginPage().container(ContainerEnum.AUTH.getContainerClass()),expectedString));

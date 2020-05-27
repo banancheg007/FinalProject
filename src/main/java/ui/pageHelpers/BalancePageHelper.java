@@ -10,7 +10,7 @@ public class BalancePageHelper extends BaseHelper{
         super(appManager, pageManager);
     }
 
-    @Step("Go to balance page helper")
+    @Step("Перейти на сторінку історії платежів")
     public BalancePageHelper goToPaymentsHistoryPage(){
         pageManager.onBalancePage().goToPaymentsHistoryPage();
         return this;

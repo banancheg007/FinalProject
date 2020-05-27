@@ -10,19 +10,19 @@ public class PersonalPageHelper extends BaseHelper{
         super(appManager, pageManager);
     }
 
-    @Step("Compare expected full name with the authorized user")
+    @Step("Порівняти очікуване ім'я з повним ім'ям авторизованого користувача")
     public PersonalPageHelper compareExpectedNameWithAuthorizedUser(String expectedFullName){
         compareString(expectedFullName,pageManager.onPersonalPage().getFullNameOfAuthorizedUser());
         return this;
     }
 
-    @Step("Logout")
+    @Step("Вихід з персонального кабінету")
     public PersonalPageHelper logout(){
         pageManager.onPersonalPage().logout();
         return this;
     }
 
-    @Step("Go to page")
+    @Step("Перейти на сторінку")
     public PersonalPageHelper goToPage(String nextPageNavigateContainerClass){
         pageManager.onPersonalPage().goToPage(nextPageNavigateContainerClass);
         return this;
