@@ -9,6 +9,8 @@
         <classes>
             <class name="tests.DisplayHistoryTests"/>
             <class name="tests.UrlTests"/>
+            <class name="tests.UserTests"/>
+            <class name="tests.SmokeTests"/>
         </classes>
     </test>
     <test name="FirefoxTestCases">
@@ -16,6 +18,8 @@
         <classes>
             <class name="tests.DisplayHistoryTests"/>
             <class name="tests.UrlTests"/>
+            <class name="tests.UserTests"/>
+            <class name="tests.SmokeTests"/>
         </classes>
     </test>
 
