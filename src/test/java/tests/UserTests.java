@@ -13,7 +13,7 @@ public class UserTests extends BaseTest{
         appManager.getLoginPageHelper().signIn(Constants.CHERKASY,Constants.EMPTY_LOGIN, Constants.EMPTY_PASSWORD).compareTextAfterLoginWithWrongData(Constants.WRONG_DATA);
     }
 
-    @Test(description = "Авторизація з коректиними даними")
+    @Test(description = "Авторизація з коректними даними")
     public void signIn(){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
         appManager.getLoginPageHelper().signIn(Constants.CHERKASY,Constants.LOGIN, Constants.PASSWORD);
