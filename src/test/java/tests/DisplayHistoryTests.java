@@ -16,7 +16,7 @@ public class DisplayHistoryTests extends BaseTest{
         appManager.getBalancePageHelper().goToPaymentsHistoryPage();
         appManager.getPaymentsHistoryPageHelper().showHistoryForPeriodAndType(DropDownHistoryItems.YEAR_2019,DropDownHistoryItems.DECEMBER, DropDownHistoryItems.ALL_TYPES).waitForLoadData().compareMonthAndYearResults(DropDownHistoryItems.DECEMBER.getNumericalEquivalent(),Integer.parseInt(DropDownHistoryItems.YEAR_2019.getItemText()));
     }
-
+/*
     @Test(description = "Відображення списання за період")
     public void WriteOffsForPeriod(){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
@@ -34,5 +34,5 @@ public class DisplayHistoryTests extends BaseTest{
         appManager.getPersonalPageHelper().goToPage(ContainerEnum.TO_PAGE_BALANCE.getContainerClass());
         appManager.getBalancePageHelper().goToPaymentsHistoryPage();
         appManager.getPaymentsHistoryPageHelper().showHistoryForPeriodAndType(DropDownHistoryItems.YEAR_2020,DropDownHistoryItems.JANUARY, DropDownHistoryItems.INCOME).waitForLoadData().compareIncomeReason();
-    }
+    }*/
 }
