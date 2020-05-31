@@ -32,9 +32,9 @@ public interface PaymentsHistoryPage extends BasePage, WithPersonalCabinetMenu, 
 
     default void waitForLoadData(){
         dateColumns().waitUntil(not(empty()));
-        for (AtlasWebElement a:dateColumns()){
+        /*for (AtlasWebElement a:dateColumns()){
             System.out.println(a.getText());
-        }
+        }*/
     }
 
 
