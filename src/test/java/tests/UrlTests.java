@@ -2,6 +2,8 @@ package tests;
 
 
 import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 import utils.Constants;
 import utils.TestDataProviders;
@@ -10,31 +12,40 @@ import utils.enums.ContainerEnum;
 
 
 //@Epic("Main page")
-@Feature("Smoke tests")
+
 
 public class UrlTests extends BaseTest{
 
+    @Severity(value = SeverityLevel.NORMAL)
+    @Feature("Url")
     @Test(description = "Перевірка переходу на сторінку після зміни міста", dataProvider = "getCitiesFromHeader", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterChangeCities(String header,String city, String url){
         appManager.getMainPageHelper().openMainPage().changeCityInHeader(header,city).checkEqualsUrlWithCurrent(url);
     }
 
+    @Severity(value = SeverityLevel.NORMAL)
+    @Feature("Url")
     @Test(description = "Перевірка переходу на сторінку після вибору пункту меню", dataProvider = "getMenuItems", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterSelectDropdownMenuItems(String header,String menuItem, String url){
         appManager.getMainPageHelper().openMainPage().selectDropdownItem(header, menuItem).checkEqualsUrlWithCurrent(url);
     }
 
+    @Severity(value = SeverityLevel.NORMAL)
+    @Feature("Url")
     @Test(description = "Перевірка переходу на сторінку після натискання плаваючої кнопки", dataProvider = "getFabs", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterClickOnFab(String fab, String url){
         appManager.getMainPageHelper().openMainPage().clickOnFab(fab).checkEqualsUrlWithCurrent(url);
        }
 
+    @Severity(value = SeverityLevel.NORMAL)
+    @Feature("Url")
     @Test(description = "Перевірка переходу на сторінку після натискання кнопки в шапці", dataProvider = "getHeaderButtons", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterClickOnButtonInHeader(String button, String url){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(button).checkEqualsUrlWithCurrent(url);
     }
 
-
+    @Severity(value = SeverityLevel.NORMAL)
+    @Feature("Url")
     @Test(description = "Перевірка переходу на вибрану сторінку з персональної сторінки", dataProvider = "getNavigateContainersToPage", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterNavigateFromPersonalPage(String container, String url){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
@@ -42,6 +53,8 @@ public class UrlTests extends BaseTest{
         appManager.getPersonalPageHelper().goToPage(container).checkEqualsUrlWithCurrent(url);
     }
 
+    @Severity(value = SeverityLevel.NORMAL)
+    @Feature("Url")
     @Test(description = "Перевірка переходу на вибрану сторінку з персонального меню", dataProvider = "getButtonsFromPersonalCabinetMenu", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterNavigateFromPersonalMenu(String personalPageMenuButtonText, String url){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
