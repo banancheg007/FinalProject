@@ -2,6 +2,11 @@ package tests;
 
 
 import io.qameta.allure.Feature;
+import org.testng.annotations.Test;
+import utils.Constants;
+import utils.TestDataProviders;
+import utils.enums.Button;
+import utils.enums.ContainerEnum;
 
 
 //@Epic("Main page")
@@ -9,8 +14,8 @@ import io.qameta.allure.Feature;
 
 public class UrlTests extends BaseTest{
 
-   /* @Test(description = "Перевірка переходу на сторінку після зміни міста", dataProvider = "getCitiesFromHeader", dataProviderClass = TestDataProviders.class)
-    public void CheckReferencesAfterChangeCitiesInHeader(String header,String city, String url){
+    @Test(description = "Перевірка переходу на сторінку після зміни міста", dataProvider = "getCitiesFromHeader", dataProviderClass = TestDataProviders.class)
+    public void CheckReferencesAfterChangeCities(String header,String city, String url){
         appManager.getMainPageHelper().openMainPage().changeCityInHeader(header,city).checkEqualsUrlWithCurrent(url);
     }
 
@@ -31,18 +36,18 @@ public class UrlTests extends BaseTest{
 
 
     @Test(description = "Перевірка переходу на вибрану сторінку з персональної сторінки", dataProvider = "getNavigateContainersToPage", dataProviderClass = TestDataProviders.class)
-    public void CheckReferencesAfterNavigateToPagesFromPersonalPage(String container, String url){
+    public void CheckReferencesAfterNavigateFromPersonalPage(String container, String url){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
         appManager.getLoginPageHelper().signIn(Constants.CHERKASY, Constants.LOGIN, Constants.PASSWORD);
         appManager.getPersonalPageHelper().goToPage(container).checkEqualsUrlWithCurrent(url);
     }
 
     @Test(description = "Перевірка переходу на вибрану сторінку з персонального меню", dataProvider = "getButtonsFromPersonalCabinetMenu", dataProviderClass = TestDataProviders.class)
-    public void CheckReferencesAfterNavigateToPagesFromMenuOnPersonalPage(String personalPageMenuButtonText, String url){
+    public void CheckReferencesAfterNavigateFromPersonalMenu(String personalPageMenuButtonText, String url){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
         appManager.getLoginPageHelper().signIn(Constants.CHERKASY,Constants.LOGIN, Constants.PASSWORD);
         appManager.getPersonalPageHelper().goToPage(ContainerEnum.TO_PAGE_ABONENT.getContainerClass());
         appManager.getAbonentPageHelper().goToPage(personalPageMenuButtonText).checkEqualsUrlWithCurrent(url);
 
-    }*/
+    }
 }
