@@ -2,6 +2,11 @@ package tests;
 
 
 import io.qameta.allure.Feature;
+import org.testng.annotations.Test;
+import utils.Constants;
+import utils.TestDataProviders;
+import utils.enums.Button;
+import utils.enums.ContainerEnum;
 
 
 //@Epic("Main page")
@@ -9,7 +14,7 @@ import io.qameta.allure.Feature;
 
 public class UrlTests extends BaseTest{
 
-   /* @Test(description = "Перевірка переходу на сторінку після зміни міста", dataProvider = "getCitiesFromHeader", dataProviderClass = TestDataProviders.class)
+    @Test(description = "Перевірка переходу на сторінку після зміни міста", dataProvider = "getCitiesFromHeader", dataProviderClass = TestDataProviders.class)
     public void CheckReferencesAfterChangeCitiesInHeader(String header,String city, String url){
         appManager.getMainPageHelper().openMainPage().changeCityInHeader(header,city).checkEqualsUrlWithCurrent(url);
     }
@@ -44,5 +49,5 @@ public class UrlTests extends BaseTest{
         appManager.getPersonalPageHelper().goToPage(ContainerEnum.TO_PAGE_ABONENT.getContainerClass());
         appManager.getAbonentPageHelper().goToPage(personalPageMenuButtonText).checkEqualsUrlWithCurrent(url);
 
-    }*/
+    }
 }
