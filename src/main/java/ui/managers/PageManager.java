@@ -1,4 +1,4 @@
-package ui;
+package ui.managers;
 
 import io.qameta.atlas.core.Atlas;
 import io.qameta.atlas.webdriver.WebDriverConfiguration;

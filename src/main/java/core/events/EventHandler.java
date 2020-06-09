@@ -1,5 +1,6 @@
 package core.events;
 
+import core.initialDriver.InitialDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -69,7 +70,7 @@ public abstract class EventHandler extends JSWaiter implements WebDriverEventLis
     public void beforeClickOn(WebElement arg0, WebDriver arg1) {
         waitJQueryAngular();
         waitForJQueryLoad();
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(false);", arg0);
+        ((JavascriptExecutor) InitialDriver.getInstance().getDriver()).executeScript("arguments[0].scrollIntoView(false);", arg0);
     }
 
     @Override
@@ -88,7 +89,6 @@ public abstract class EventHandler extends JSWaiter implements WebDriverEventLis
 
     @Override
     public void afterNavigateTo(String arg0, WebDriver arg1) {
-
         waitJQueryAngular();
         waitUntilJSReady();
     }

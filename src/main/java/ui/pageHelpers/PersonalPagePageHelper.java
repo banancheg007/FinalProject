@@ -1,29 +1,29 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
-import ui.AppManager;
-import ui.PageManager;
+import ui.managers.AppManager;
+import ui.managers.PageManager;
 
-public class PersonalPageHelper extends BaseHelper{
+public class PersonalPagePageHelper extends BasePageHelper {
 
-    public PersonalPageHelper(AppManager appManager, PageManager pageManager) {
+    public PersonalPagePageHelper(AppManager appManager, PageManager pageManager) {
         super(appManager, pageManager);
     }
 
     @Step("Порівняти очікуване ім'я з повним ім'ям авторизованого користувача")
-    public PersonalPageHelper compareExpectedNameWithAuthorizedUser(String expectedFullName){
+    public PersonalPagePageHelper compareExpectedNameWithAuthorizedUser(String expectedFullName){
         compareString(expectedFullName,pageManager.onPersonalPage().getFullNameOfAuthorizedUser());
         return this;
     }
 
     @Step("Вихід з персонального кабінету")
-    public PersonalPageHelper logout(){
+    public PersonalPagePageHelper logout(){
         pageManager.onPersonalPage().logout();
         return this;
     }
 
     @Step("Перейти на сторінку")
-    public PersonalPageHelper goToPage(String nextPageNavigateContainerClass){
+    public PersonalPagePageHelper goToPage(String nextPageNavigateContainerClass){
         pageManager.onPersonalPage().goToPage(nextPageNavigateContainerClass);
         return this;
     }

@@ -4,19 +4,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.enums.ContainerEnum;
 import utils.enums.Input;
-import ui.AppManager;
-import ui.PageManager;
+import ui.managers.AppManager;
+import ui.managers.PageManager;
 
 
-public class LoginPageHelper extends BaseHelper{
+public class LoginPagePageHelper extends BasePageHelper {
 
-    public LoginPageHelper(AppManager appManager, PageManager pageManager) {
+    public LoginPagePageHelper(AppManager appManager, PageManager pageManager) {
         super(appManager, pageManager);
     }
 
 
     @Step("Авторизуватись")
-    public LoginPageHelper signIn(String city, String login, String password){
+    public LoginPagePageHelper signIn(String city, String login, String password){
         pageManager.onLoginPage().container(ContainerEnum.AUTH_CITY_DROPDOWN.getContainerClass()).click();
         pageManager.onLoginPage().cityDropdownItem(city).click();
         pageManager.onLoginPage().input(Input.BTN_CITY_SELECT.getId()).click();
@@ -29,7 +29,7 @@ public class LoginPageHelper extends BaseHelper{
 
 
     @Step("Порівняти поточний тексту помилки з очікуваним повідомленням")
-    public LoginPageHelper compareTextAfterLoginWithWrongData(String expectedString){
+    public LoginPagePageHelper compareTextAfterLoginWithWrongData(String expectedString){
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(),3);
         webDriverWait.until(ExpectedConditions.textToBePresentInElement(pageManager.onLoginPage().container(ContainerEnum.AUTH.getContainerClass()),expectedString));
         compareString(expectedString,pageManager.onLoginPage().container(ContainerEnum.AUTH.getContainerClass()).getText());

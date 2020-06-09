@@ -1,43 +1,43 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
-import ui.AppManager;
-import ui.PageManager;
+import ui.managers.AppManager;
+import ui.managers.PageManager;
 import utils.enums.DropDownHistoryItems;
 
-public class PaymentsHistoryPageHelper extends BaseHelper{
+public class PaymentsHistoryPagePageHelper extends BasePageHelper {
 
-    public PaymentsHistoryPageHelper(AppManager appManager, PageManager pageManager) {
+    public PaymentsHistoryPagePageHelper(AppManager appManager, PageManager pageManager) {
         super(appManager, pageManager);
     }
 
     @Step("Показати історію за період по типу")
-    public PaymentsHistoryPageHelper showHistoryForPeriodAndType(DropDownHistoryItems year, DropDownHistoryItems month, DropDownHistoryItems type){
+    public PaymentsHistoryPagePageHelper showHistoryForPeriodAndType(DropDownHistoryItems year, DropDownHistoryItems month, DropDownHistoryItems type){
         pageManager.onPaymentsHistoryPage().showHistoryForPeriodAndType(year, month, type);
         return this;
     }
 
 
     @Step("Почекати загрузки результатів")
-    public PaymentsHistoryPageHelper waitForLoadData(){
+    public PaymentsHistoryPagePageHelper waitForLoadData(){
         pageManager.onPaymentsHistoryPage().waitForLoadData();
         return this;
     }
 
     @Step("Порівняти місяць і рік з отриманими результатами")
-    public PaymentsHistoryPageHelper compareMonthAndYearResults(int expectedMonth, int expectedYear){
+    public PaymentsHistoryPagePageHelper compareMonthAndYearResults(int expectedMonth, int expectedYear){
         pageManager.onPaymentsHistoryPage().compareMonthAndYearResults(expectedMonth,expectedYear);
         return this;
     }
 
     @Step("Перевірка списання")
-    public PaymentsHistoryPageHelper compareWriteOffsReason(){
+    public PaymentsHistoryPagePageHelper compareWriteOffsReason(){
         pageManager.onPaymentsHistoryPage().compareWriteOffsReason();
         return this;
     }
 
     @Step("Перевірка поповнення")
-    public PaymentsHistoryPageHelper compareIncomeReason(){
+    public PaymentsHistoryPagePageHelper compareIncomeReason(){
         pageManager.onPaymentsHistoryPage().compareIncomeReason();
         return this;
     }

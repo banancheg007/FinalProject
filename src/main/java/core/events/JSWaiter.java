@@ -3,15 +3,13 @@ package core.events;
 
 import core.initialDriver.InitialDriver;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 class JSWaiter {
 
-    protected WebDriver driver = InitialDriver.getInstance().getDriver();
-    private final WebDriverWait jsWait = new WebDriverWait(driver, 2);
-    private final JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+    private final WebDriverWait jsWait = new WebDriverWait(InitialDriver.getInstance().getDriver(), 2);
+    private final JavascriptExecutor jsExec = (JavascriptExecutor) InitialDriver.getInstance().getDriver();
 
     public void waitForJQueryLoad() {
         try {
@@ -20,7 +18,7 @@ class JSWaiter {
                 return ((Long) ((JavascriptExecutor) driver)
                         .executeScript("return jQuery.active") == 0);
             };
-            JavascriptExecutor js = (JavascriptExecutor) driver;
+            JavascriptExecutor js = (JavascriptExecutor) InitialDriver.getInstance().getDriver();
             boolean jqueryReady = (Boolean) js.executeScript("return !window.jQuery");
             if (jqueryReady) {
                 jsWait.until(jQueryLoad);

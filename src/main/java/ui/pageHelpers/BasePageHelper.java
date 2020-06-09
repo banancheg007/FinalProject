@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import ui.AppManager;
-import ui.PageManager;
+import ui.managers.AppManager;
+import ui.managers.PageManager;
 
 import java.util.ArrayList;
 
-public class BaseHelper {
+public class BasePageHelper {
 
     protected AppManager appManager;
 
@@ -21,7 +21,7 @@ public class BaseHelper {
         getDriver().navigate().to(url);
     }
 
-    BaseHelper(AppManager appManager, PageManager pageManager){
+    BasePageHelper(AppManager appManager, PageManager pageManager){
         this.appManager = appManager;
         this.pageManager = pageManager;
     }
@@ -44,7 +44,7 @@ public class BaseHelper {
     }
 
     @Step("Зрівняти поточний і очікуваний URL")
-    public BaseHelper checkEqualsUrlWithCurrent(String expectedUrl){
+    public BasePageHelper checkEqualsUrlWithCurrent(String expectedUrl){
         waitForLoadUrl(expectedUrl);
         Assert.assertEquals(getCurrentUrl(),expectedUrl);
         return this;

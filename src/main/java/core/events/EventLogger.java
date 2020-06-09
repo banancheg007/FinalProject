@@ -34,9 +34,7 @@ public class EventLogger implements WebDriverEventListener {
 
     @Override
     public void beforeNavigateTo(String s, WebDriver webDriver) {
-
             Logger.getInstance().loggerNavigateTxt = "Go to URL:" + s;
-
     }
 
     @Override

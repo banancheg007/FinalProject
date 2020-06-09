@@ -1,17 +1,17 @@
 package ui.pageHelpers;
 
 import io.qameta.allure.Step;
-import ui.AppManager;
-import ui.PageManager;
+import ui.managers.AppManager;
+import ui.managers.PageManager;
 
-public class BalancePageHelper extends BaseHelper{
+public class BalancePagePageHelper extends BasePageHelper {
 
-    public BalancePageHelper(AppManager appManager, PageManager pageManager) {
+    public BalancePagePageHelper(AppManager appManager, PageManager pageManager) {
         super(appManager, pageManager);
     }
 
     @Step("Перейти на сторінку історії платежів")
-    public BalancePageHelper goToPaymentsHistoryPage(){
+    public BalancePagePageHelper goToPaymentsHistoryPage(){
         pageManager.onBalancePage().goToPaymentsHistoryPage();
         return this;
     }

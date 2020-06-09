@@ -73,7 +73,6 @@ public class TestDataProviders {
 
     @DataProvider(name = "getFabs")
     public static Object[][] getFabs(){
-        //return getDataFromEnums2(FloatingActionButton.class);
         return new Object[][]{
                 {FloatingActionButton.FACEBOOK_FAB.getFabClass(),FloatingActionButton.FACEBOOK_FAB.getUrl()},
                 {FloatingActionButton.INSTAGRAM_FAB.getFabClass(),FloatingActionButton.INSTAGRAM_FAB.getUrl()},

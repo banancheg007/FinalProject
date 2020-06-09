@@ -2,7 +2,7 @@
 <suite name="Final project" parallel="tests">
 
     <listeners>
-        <listener class-name="core.listeners.Listener"/>
+        <listener class-name="core.listeners.TestListener"/>
         <listener class-name="core.listeners.RetryListener"/>
     </listeners>
     <test name="ChromeTestCases">

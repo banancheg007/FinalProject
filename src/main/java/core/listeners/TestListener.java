@@ -12,7 +12,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import core.initialDriver.InitialDriver;
 
-public class Listener implements ITestListener{
+public class TestListener implements ITestListener{
 
 
 
