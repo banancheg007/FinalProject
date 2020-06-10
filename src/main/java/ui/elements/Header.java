@@ -1,4 +1,6 @@
 package ui.elements;
 
-public interface Header extends  WithButton, WithDropdown, WithImage {
+import io.qameta.atlas.webdriver.AtlasWebElement;
+
+public interface Header extends  WithButton, WithDropdown, WithImage, AtlasWebElement {
 }
