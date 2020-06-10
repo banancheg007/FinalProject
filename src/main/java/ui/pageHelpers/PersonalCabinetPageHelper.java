@@ -4,14 +4,14 @@ import io.qameta.allure.Step;
 import ui.managers.AppManager;
 import ui.managers.PageManager;
 
-public class PersonalCabinetPagePageHelper extends BasePageHelper {
+public class PersonalCabinetPageHelper extends BasePageHelper {
 
-    public PersonalCabinetPagePageHelper(AppManager appManager, PageManager pageManager) {
+    public PersonalCabinetPageHelper(AppManager appManager, PageManager pageManager) {
         super(appManager, pageManager);
     }
 
     @Step("Перейти на сторінку із персонального меню")
-    public PersonalCabinetPagePageHelper goToPage(String personalCabinetMenuButton){
+    public PersonalCabinetPageHelper goToPage(String personalCabinetMenuButton){
         pageManager.onPersonalCabinetPage().goToPage(personalCabinetMenuButton);
         return this;
     }

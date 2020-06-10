@@ -1,7 +1,6 @@
 package core.logger;
 
 import io.qameta.allure.Step;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,5 +39,4 @@ public class Logger {
     public void log(String log) {
         System.out.println("Logged to allure: " + log);
     }
-
 }

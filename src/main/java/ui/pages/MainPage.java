@@ -33,18 +33,6 @@ public interface MainPage extends BasePage, WithNavigationBar, WithHeader, WithI
     default  void changeDropdownItemInNavigationBar(String header,String menuItem){
         getDropdownFromNavigationBar(header).click();
         getDropdownFromNavigationBar(header).dropdownItem(menuItem).click();
-
     }
-
-
-
-
-
-
-
-
-
-
-
 
 }

@@ -5,39 +5,39 @@ import ui.managers.AppManager;
 import ui.managers.PageManager;
 import utils.enums.DropDownHistoryItems;
 
-public class PaymentsHistoryPagePageHelper extends BasePageHelper {
+public class PaymentsHistoryPageHelper extends BasePageHelper {
 
-    public PaymentsHistoryPagePageHelper(AppManager appManager, PageManager pageManager) {
+    public PaymentsHistoryPageHelper(AppManager appManager, PageManager pageManager) {
         super(appManager, pageManager);
     }
 
     @Step("Показати історію за період по типу")
-    public PaymentsHistoryPagePageHelper showHistoryForPeriodAndType(DropDownHistoryItems year, DropDownHistoryItems month, DropDownHistoryItems type){
+    public PaymentsHistoryPageHelper showHistoryForPeriodAndType(DropDownHistoryItems year, DropDownHistoryItems month, DropDownHistoryItems type){
         pageManager.onPaymentsHistoryPage().showHistoryForPeriodAndType(year, month, type);
         return this;
     }
 
 
     @Step("Почекати загрузки результатів")
-    public PaymentsHistoryPagePageHelper waitForLoadData(){
+    public PaymentsHistoryPageHelper waitForLoadData(){
         pageManager.onPaymentsHistoryPage().waitForLoadData();
         return this;
     }
 
     @Step("Порівняти місяць і рік з отриманими результатами")
-    public PaymentsHistoryPagePageHelper compareMonthAndYearResults(int expectedMonth, int expectedYear){
+    public PaymentsHistoryPageHelper compareMonthAndYearResults(int expectedMonth, int expectedYear){
         pageManager.onPaymentsHistoryPage().compareMonthAndYearResults(expectedMonth,expectedYear);
         return this;
     }
 
     @Step("Перевірка списання")
-    public PaymentsHistoryPagePageHelper compareWriteOffsReason(){
+    public PaymentsHistoryPageHelper compareWriteOffsReason(){
         pageManager.onPaymentsHistoryPage().compareWriteOffsReason();
         return this;
     }
 
     @Step("Перевірка поповнення")
-    public PaymentsHistoryPagePageHelper compareIncomeReason(){
+    public PaymentsHistoryPageHelper compareIncomeReason(){
         pageManager.onPaymentsHistoryPage().compareIncomeReason();
         return this;
     }

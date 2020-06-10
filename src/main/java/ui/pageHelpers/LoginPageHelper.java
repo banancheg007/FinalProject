@@ -8,15 +8,15 @@ import ui.managers.AppManager;
 import ui.managers.PageManager;
 
 
-public class LoginPagePageHelper extends BasePageHelper {
+public class LoginPageHelper extends BasePageHelper {
 
-    public LoginPagePageHelper(AppManager appManager, PageManager pageManager) {
+    public LoginPageHelper(AppManager appManager, PageManager pageManager) {
         super(appManager, pageManager);
     }
 
 
     @Step("Авторизуватись")
-    public LoginPagePageHelper signIn(String city, String login, String password){
+    public LoginPageHelper signIn(String city, String login, String password){
         pageManager.onLoginPage().container(ContainerEnum.AUTH_CITY_DROPDOWN.getContainerClass()).click();
         pageManager.onLoginPage().cityDropdownItem(city).click();
         pageManager.onLoginPage().input(Input.BTN_CITY_SELECT.getId()).click();
@@ -29,7 +29,7 @@ public class LoginPagePageHelper extends BasePageHelper {
 
 
     @Step("Порівняти поточний тексту помилки з очікуваним повідомленням")
-    public LoginPagePageHelper compareTextAfterLoginWithWrongData(String expectedString){
+    public LoginPageHelper compareTextAfterLoginWithWrongData(String expectedString){
         WebDriverWait webDriverWait = new WebDriverWait(getDriver(),3);
         webDriverWait.until(ExpectedConditions.textToBePresentInElement(pageManager.onLoginPage().container(ContainerEnum.AUTH.getContainerClass()),expectedString));
         compareString(expectedString,pageManager.onLoginPage().container(ContainerEnum.AUTH.getContainerClass()).getText());
