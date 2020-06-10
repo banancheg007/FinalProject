@@ -1,5 +1,7 @@
 package ui.elements;
 
-public interface NavigationBar extends WithButton, WithDropdown{
+import io.qameta.atlas.webdriver.AtlasWebElement;
+
+public interface NavigationBar extends AtlasWebElement,WithButton, WithDropdown{
 
 }
