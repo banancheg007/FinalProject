@@ -12,7 +12,7 @@ import utils.enums.DropDownHistoryItems;
 public class DisplayHistoryTests extends BaseTest{
 
     @Severity(value = SeverityLevel.NORMAL)
-    @Feature("User")
+    @Feature("History")
     @Test(description = "Відображення історії за період")
     public void HistoryForPeriod(){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
@@ -23,6 +23,7 @@ public class DisplayHistoryTests extends BaseTest{
     }
 
     @Severity(value = SeverityLevel.NORMAL)
+    @Feature("History")
     @Test(description = "Відображення списання за період")
     public void WriteOffsForPeriod(){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
@@ -33,6 +34,7 @@ public class DisplayHistoryTests extends BaseTest{
     }
 
     @Severity(value = SeverityLevel.NORMAL)
+    @Feature("History")
     @Test(description = "Відображення поповнень за період")
     public void IncomesForPeriod(){
         appManager.getMainPageHelper().openMainPage().clickOnButtonInHeader(Button.PERSONAL_CABINET.getText());
